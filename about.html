@@ -4,6 +4,7 @@
 <title>Watercolor | About</title>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <!-- JS -->
+
 <script type="text/javascript" src="js/jquery_1.3.2.js"></script>
 <script type="text/javascript" src="js/jqueryui.js"></script>
 <script type="text/javascript" src="js/easing.js"></script>
@@ -74,13 +75,15 @@
 
     <table>
       <thead>
+      <form action="single.html">
       <button class="button button1">+ Adicionar </button>
+      </form>
       <tr>
         <th>Titulo</th>
         <th>Autor</th>
         <th>Categoria</th>
-        <th class="edit">Editar</th>
-        <th>Eliminar</th>
+        <th></th>
+        <th></th>
       </tr>
       </thead>
       <tbody>
@@ -106,7 +109,7 @@
 
         </td>
         <td>
-          <img src="img/bin.png" width="17" height="17" alt="Caixote do lixo" usemap="#imagemap">
+          <img src="img/bin.png" width="17" height="17" alt="Caixote do lixo" class="center" usemap="#imagemap">
 
           <map name="imagemap">
             <area shape="rect" coords="0,0,17,17" onclick="eliminarItem()" onmouseover="changeCursor('pointer')" onmouseout="changeCursor('default')">
@@ -117,41 +120,49 @@
     document.body.style.cursor = cursorStyle;
   }
 </script>
+
           </tr>
 
+
+
+
+
+
+      <tr>
+        <td>1984</td>
+        <td>George Orwell</td>
+        <td>Ficção</td>
+        <td class="edit">
+          <img src="img/edit.png" width="17" height="17" alt="editar" usemap="#imagemap" >
+
+
+          <map name="imagemap">
+            <area shape="rect" coords="0,0,17,17" onclick="editarItem()" onmouseover="changeCursor('pointer')" onmouseout="changeCursor('default')">
+          </map>
+
+          <script>
+  function changeCursor(cursorStyle) {
+    document.body.style.cursor = cursorStyle;
+  }
+</script>
+
+
+
         </td>
+        <td>
+          <img src="img/bin.png" width="17" height="17" alt="Caixote do lixo" class="center" usemap="#imagemap">
 
+          <map name="imagemap">
+            <area shape="rect" coords="0,0,17,17" onclick="eliminarItem()" onmouseover="changeCursor('pointer')" onmouseout="changeCursor('default')">
+          </map>
 
+          <script>
+  function changeCursor(cursorStyle) {
+    document.body.style.cursor = cursorStyle;
+  }
+</script>
+      </tr>
 
-
-      <tr>
-        <td>Cell 1</td>
-        <td>Cell 2</td>
-        <td>Cell 3</td>
-        <td>Cell 4</td>
-        <td>Cell 5</td>
-      </tr>
-      <tr>
-        <td>Cell 1</td>
-        <td>Cell 2</td>
-        <td>Cell 3</td>
-        <td>Cell 4</td>
-        <td>Cell 5</td>
-      </tr>
-      <tr>
-        <td>Cell 1</td>
-        <td>Cell 2</td>
-        <td>Cell 3</td>
-        <td>Cell 4</td>
-        <td>Cell 5</td>
-      </tr>
-      <tr>
-        <td>Cell 1</td>
-        <td>Cell 2</td>
-        <td>Cell 3</td>
-        <td>Cell 4</td>
-        <td>Cell 5</td>
-      </tr>
       </tbody>
     </table>
 
@@ -159,11 +170,9 @@
 
         </div>
       </div>
-    </div>
-    <!-- ENDS text -->
-  </div>
+
   <!-- ENDS MAIN -->
-</div>
+
 <!-- ENDS WRAPPER -->
 <!-- FOOTER -->
 <div id="footer">
@@ -208,7 +217,7 @@
       </div>
     </div>
     <div class="footer-bottom">
-      <p class="legal">&copy; Copyright 2012 <a href="#">Company Name</a> All Rights Reserved | Website Template By <a target="_blank" href="http://www.luiszuno.com">luiszuno</a></p>
+      <p class="legal">&copy; Copyright 2012 <a href="#">Ricardo Silva</a> All Rights Reserved </p>
     </div>
   </div>
 </div>

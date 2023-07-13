@@ -29,6 +29,10 @@
 <script src="js/bebas_400.font.js" type="text/javascript"></script>
 <script type="text/javascript">Cufon.replace('.custom', { fontFamily: 'bebas', hover: true });</script>
 <!-- /Cufon -->
+<!-- Font Awesome -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css"  />
+<link rel="stylesheet" href="style.css">
+<!-- /Font Awesome -->
 </head>
 <body>
 <!-- WRAPPER -->
@@ -50,7 +54,7 @@
   </ul>
   <!-- ENDS navigation -->
   <!-- HEADER -->
-  <div id="header"> <a href="index.html"><img src="img/logo.png" alt="" id="logo" /></a> <img src="img/nav-arrow.png" alt="" id="arrow" class="arrow-blog" />
+  <div id="header"> <a href="index.html"><img src="img/logo.png" alt="" id="logo" /></a>
     <form action="#" method="post" id="search">
       <p>
         <input type="text" onfocus="defaultInput(this)" onblur="clearInput(this)" name="keyword" id="keyword" value="Search..." />
@@ -68,123 +72,200 @@
     <div id="posts">
       <!-- single -->
       <div class="single">
-        <p class="post-title custom">Vestibulum sed neque ac magna.</p>
-        <p class="post-meta">Posted Jan 1, 2010 <span>by Admin</span></p>
-        <div class="post-img"><a href="#"><img src="img/dummies/dummy-post-img.jpg" alt="" /></a><span></span></div>
-        <p class="brief">Morbi sagittis, dolor nec tempor condimentum, libero quam euismod quam, sed sodales purus nisl eget felis. Pellentesque elit massa, cursus id venenatis quis; feugiat a turpis. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Sed enim massa; pretium ac accumsan in, feugiat ac magna. Morbi ut lectus ante, ac tristique orci. …</p>
-        <p class="brief">Morbi sagittis, dolor nec tempor condimentum, libero quam euismod quam, sed sodales purus nisl eget felis. Pellentesque elit massa, cursus id venenatis quis; feugiat a turpis. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Sed enim massa; pretium ac accumsan in, feugiat ac magna. Morbi ut lectus ante, ac tristique orci. …</p>
-        <p class="brief">Morbi sagittis, dolor nec tempor condimentum, libero quam euismod quam, sed sodales purus nisl eget felis. Pellentesque elit massa, cursus id venenatis quis; feugiat a turpis. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Sed enim massa; pretium ac accumsan in, feugiat ac magna. Morbi ut lectus ante, ac tristique orci. …</p>
-        <p class="brief">Morbi sagittis, dolor nec tempor condimentum, libero quam euismod quam, sed sodales purus nisl eget felis. Pellentesque elit massa, cursus id venenatis quis; feugiat a turpis. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Sed enim massa; pretium ac accumsan in, feugiat ac magna. Morbi ut lectus ante, ac tristique orci. …</p>
-      </div>
-      <!-- ENDS single -->
-      <!-- comments -->
-      <div class="comments">
-        <p class="post-comments custom">12 <span class="custom">Comments</span></p>
-        <!-- comments list -->
-        <ol class="comments-list">
-          <li>
-            <p><a href="#"><img src="img/dummies/dummy-avatar.jpg" alt="" class="avatar" /></a></p>
-            <p class="meta">Posted Jan 1, 2010 1:20pm <span>by Admin</span></p>
-            <p class="brief">Feugiat a turpis. Cum sociis natoque penatibus et magnis Cum sociis natoque penatibusmontes, nascetur ridiculus mus. Sed enim massa; pretium ac accumsan in, feugiat ac magna. Morbi ut lectus ante.</p>
-          </li>
-          <li>
-            <p><a href="#"><img src="img/dummies/dummy-avatar.jpg" alt="" class="avatar" /></a></p>
-            <p class="meta">Posted Jan 1, 2010 1:20pm <span>by Admin</span></p>
-            <p class="brief">Feugiat a turpis. Cum sociis natoque penatibus et magnis Cum sociis natoque penatibusmontes, nascetur ridiculus mus. Sed enim massa; pretium ac accumsan in, feugiat ac magna. Morbi ut lectus ante.</p>
-          </li>
-          <li>
-            <p><a href="#"><img src="img/dummies/dummy-avatar.jpg" alt="" class="avatar" /></a></p>
-            <p class="meta">Posted Jan 1, 2010 1:20pm <span>by Admin</span></p>
-            <p class="brief">Feugiat a turpis. Cum sociis natoque penatibus et magnis Cum sociis natoque penatibusmontes, nascetur ridiculus mus. Sed enim massa; pretium ac accumsan in, feugiat ac magna. Morbi ut lectus ante.</p>
-          </li>
-          <li>
-            <p><a href="#"><img src="img/dummies/dummy-avatar.jpg" alt="" class="avatar" /></a></p>
-            <p class="meta">Posted Jan 1, 2010 1:20pm <span>by Admin</span></p>
-            <p class="brief">Feugiat a turpis. Cum sociis natoque penatibus et magnis Cum sociis natoque penatibusmontes, nascetur ridiculus mus. Sed enim massa; pretium ac accumsan in, feugiat ac magna. Morbi ut lectus ante.</p>
-          </li>
-        </ol>
-        <!-- ENDS comments list -->
-      </div>
-      <!-- ENDS comments -->
-      <!-- leave comment -->
-      <div class="leave-comment">
-        <h3 class="custom">LEAVE A COMMENT</h3>
+        <p class="post-title custom">Adiciona o teu livro</p>
+      <br> <br> <br> <br>
         <!-- form -->
         <form id="comment-form" action="#" method="post">
           <fieldset>
             <p>
-              <label>NAME:</label>
+              <label>Título:</label>
               <input name="name"  id="name" type="text" />
             </p>
             <p>
-              <label>EMAIL:</label>
+              <label>Autor:</label>
               <input name="email"  id="email" type="text" />
             </p>
             <p>
-              <label>WEB:</label>
+              <label>Categoria:</label>
               <input name="web"  id="web" type="text" />
             </p>
             <p>
-              <label>COMMENT:</label>
+              <label>Comentários:</label>
               <textarea  name="comments"  id="comments" rows="5" cols="20"></textarea>
             </p>
-            <br/>
-            <br/>
+
             <p>
               <input type="button" value="" name="send" id="send" />
             </p>
           </fieldset>
-          <p id="error">Error Message</p>
+
         </form>
-        <p id="success">Thanks for your comments.</p>
+
         <!-- ENDS form -->
       </div>
+
       <!-- ENDS leave comment -->
     </div>
     <!-- ENDS posts -->
     <!-- sidebar -->
-    <div id="sidebar">
-      <!-- side-block -->
-      <ul class="side-block">
-        <li><a href="#" class="custom">Categories</a></li>
-        <li><a href="#" class="custom"><span>Drawings</span></a></li>
-        <li><a href="#" class="custom">Painting</a></li>
-        <li><a href="#" class="custom">Logos</a></li>
-        <li><a href="#" class="custom">Videos</a></li>
-        <li><a href="#" class="custom">Misc</a></li>
-      </ul>
-      <!-- ENDS side-block -->
-      <!-- side-block -->
-      <ul class="side-block">
-        <li><a href="#" class="custom">Archives</a></li>
-        <li><a href="#" class="custom">2010</a></li>
-        <li><a href="#" class="custom">2009</a></li>
-        <li><a href="#" class="custom">2008</a></li>
-        <li><a href="#" class="custom">2007</a></li>
-      </ul>
-      <!-- ENDS side-block -->
-      <!-- side-block -->
-      <ul class="side-posts">
-        <li><a href="#" class="custom">Recent posts</a></li>
-        <li> <a href="single.html"><img src="img/dummies/dummy-side-thumb.jpg" alt="" /></a>
-          <p class="title">Lorem ipsum dolor</p>
-          <p class="brief">Pellentesque elit massa, cursus id venenatis quis; feugiat a turpis. </p>
-        </li>
-        <li> <a href="single.html"><img src="img/dummies/dummy-side-thumb.jpg" alt="" /></a>
-          <p class="title">Lorem ipsum dolor</p>
-          <p class="brief">Pellentesque elit massa, cursus id venenatis quis; feugiat a turpis. </p>
-        </li>
-        <li> <a href="single.html"><img src="img/dummies/dummy-side-thumb.jpg" alt="" /></a>
-          <p class="title">Lorem ipsum dolor</p>
-          <p class="brief">Pellentesque elit massa, cursus id venenatis quis; feugiat a turpis. </p>
-        </li>
-        <li> <a href="single.html"><img src="img/dummies/dummy-side-thumb.jpg" alt="" /></a>
-          <p class="title">Lorem ipsum dolor</p>
-          <p class="brief">Pellentesque elit massa, cursus id venenatis quis; feugiat a turpis. </p>
-        </li>
-      </ul>
-      <!-- ENDS side-block -->
+
+
+    <div class="container">
+      <p class="post-title custom">RATING</p>
+      <div class="skills">
+        <h3 class="name">Personagens</h3>
+        <div class="rating">
+          <input type="radio" name="Personagens">
+          <input type="radio" name="Personagens">
+          <input type="radio" name="Personagens">
+          <input type="radio" name="Personagens">
+          <input type="radio" name="Personagens">
+          <input type="radio" name="Personagens">
+          <input type="radio" name="Personagens">
+          <input type="radio" name="Personagens">
+          <input type="radio" name="Personagens">
+          <input type="radio" name="Personagens">
+
+      </div>
+      </div>
+
+      <div class="skills">
+        <h3 class="name">Enredo</h3>
+        <div class="rating">
+          <input type="radio" name="Enredo">
+          <input type="radio" name="Enredo">
+          <input type="radio" name="Enredo">
+          <input type="radio" name="Enredo">
+          <input type="radio" name="Enredo">
+          <input type="radio" name="Enredo">
+          <input type="radio" name="Enredo">
+          <input type="radio" name="Enredo">
+          <input type="radio" name="Enredo">
+          <input type="radio" name="Enredo">
+        </div>
+      </div>
+
+      <div class="skills">
+        <h3 class="name">Estilo de escrita</h3>
+        <div class="rating">
+          <input type="radio" name="Estilo de escrita">
+          <input type="radio" name="Estilo de escrita">
+          <input type="radio" name="Estilo de escrita">
+          <input type="radio" name="Estilo de escrita">
+          <input type="radio" name="Estilo de escrita">
+          <input type="radio" name="Estilo de escrita">
+          <input type="radio" name="Estilo de escrita">
+          <input type="radio" name="Estilo de escrita">
+          <input type="radio" name="Estilo de escrita">
+          <input type="radio" name="Estilo de escrita">
+
+        </div>
+      </div>
+
+      <div class="skills">
+        <h3 class="name">Coerência</h3>
+        <div class="rating">
+          <input type="radio" name="Coerência">
+          <input type="radio" name="Coerência">
+          <input type="radio" name="Coerência">
+          <input type="radio" name="Coerência">
+          <input type="radio" name="Coerência">
+          <input type="radio" name="Coerência">
+          <input type="radio" name="Coerência">
+          <input type="radio" name="Coerência">
+          <input type="radio" name="Coerência">
+          <input type="radio" name="Coerência">
+        </div>
+      </div>
+
+      <div class="skills">
+        <h3 class="name">Originalidade</h3>
+        <div class="rating">
+          <input type="radio" name="originalidade">
+          <input type="radio" name="originalidade">
+          <input type="radio" name="originalidade">
+          <input type="radio" name="originalidade">
+          <input type="radio" name="originalidade">
+          <input type="radio" name="originalidade">
+          <input type="radio" name="originalidade">
+          <input type="radio" name="originalidade">
+          <input type="radio" name="originalidade">
+          <input type="radio" name="originalidade">
+        </div>
+      </div>
+
+      <div class="skills">
+        <h3 class="name">Desfecho</h3>
+        <div class="rating">
+          <input type="radio" name=Desfecho>
+          <input type="radio" name=Desfecho>
+          <input type="radio" name=Desfecho>
+          <input type="radio" name=Desfecho>
+          <input type="radio" name=Desfecho>
+          <input type="radio" name=Desfecho>
+          <input type="radio" name=Desfecho>
+          <input type="radio" name=Desfecho>
+          <input type="radio" name=Desfecho>
+          <input type="radio" name=Desfecho>
+        </div>
+      </div>
+
+      <div class="skills">
+        <h3 class="name">Relevância</h3>
+        <div class="rating">
+          <input type="radio" name="Relevancia">
+          <input type="radio" name="Relevancia">
+          <input type="radio" name="Relevancia">
+          <input type="radio" name="Relevancia">
+          <input type="radio" name="Relevancia">
+          <input type="radio" name="Relevancia">
+          <input type="radio" name="Relevancia">
+          <input type="radio" name="Relevancia">
+          <input type="radio" name="Relevancia">
+          <input type="radio" name="Relevancia">
+        </div>
+      </div>
+
+      <div class="skills">
+        <h3 class="name">Estrutura</h3>
+        <div class="rating">
+          <input type="radio" name="Estrutura">
+          <input type="radio" name="Estrutura">
+          <input type="radio" name="Estrutura">
+          <input type="radio" name="Estrutura">
+          <input type="radio" name="Estrutura">
+          <input type="radio" name="Estrutura">
+          <input type="radio" name="Estrutura">
+          <input type="radio" name="Estrutura">
+          <input type="radio" name="Estrutura">
+          <input type="radio" name="Estrutura">
+        </div>
+      </div>
+
+      <div class="skills">
+        <h3 class="name">Detalhe</h3>
+        <div class="rating">
+          <input type="radio" name="Detalhe">
+          <input type="radio" name="Detalhe">
+          <input type="radio" name="Detalhe">
+          <input type="radio" name="Detalhe">
+          <input type="radio" name="Detalhe">
+          <input type="radio" name="Detalhe">
+          <input type="radio" name="Detalhe">
+          <input type="radio" name="Detalhe">
+          <input type="radio" name="Detalhe">
+          <input type="radio" name="Detalhe">
+        </div>
+      </div>
+
+
+
+
+
     </div>
+      <!-- ENDS side-block -->
+      <!-- side-block -->
+
     <!-- ENDS sidebar -->
   </div>
   <!-- ENDS MAIN -->
@@ -193,15 +274,7 @@
 <!-- FOOTER -->
 <div id="footer">
   <div id="footer-wrapper">
-    <ul id="follow">
-      <li>
-        <p>Follow us: </p>
-      </li>
-      <li><a href="#"><img src="img/twitter.png" alt="" /></a></li>
-      <li><a href="#"><img src="img/facebook.png" alt="" /></a></li>
-      <li><a href="#"><img src="img/linkedln.png" alt="" /></a></li>
-      <li><a href="#"><img src="img/rss.png" alt="" /></a></li>
-    </ul>
+
     <div class="footer-cols">
       <div>
         <ul>
