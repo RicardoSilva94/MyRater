@@ -5,6 +5,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <!-- CSS -->
 <link rel="stylesheet" href="css/style.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="css/gallery.css" type="text/css" media="screen" />
 <link rel="stylesheet" href="css/spring.css" type="text/css" media="screen" />
 <link rel="stylesheet" href="js/prettyPhoto/css/prettyPhoto.css" type="text/css" media="screen" />
 <!--[if IE 6]>
@@ -39,6 +40,10 @@ $(document).ready(function () {
 });
 </script>
 <!-- ENDS  Prettyphotos -->
+<!-- Font Lato -->
+<link href='https://fonts.googleapis.com/css?family=Lato:100,300,400,700,900' rel='stylesheet' type='text/css'>
+<!-- ENDS Font Lato -->
+
 </head>
 <body>
 <!-- WRAPPER -->
@@ -83,68 +88,74 @@ $(document).ready(function () {
       <li><a href="#cat-flash">FLASH</a></li>
       <li><a href="#cat-video">VIDEO</a></li>
     </ul>
-    <!-- filter -->
-    <!-- thumbs -->
-    <ul id="portfolio-list" class="gallery">
-      <li class="cat-images"> <a href="img/dummies/dummy-big-image.jpg" rel="prettyPhoto[images]"> <span></span> <img src="img/dummies/dummy-gallery-thumb.jpg" alt="" /></a> <em>Images</em> </li>
-      <li class="cat-flash"> <a href="#" rel="prettyPhoto[flash]"> <span></span> <img src="img/dummies/dummy-gallery-thumb2.jpg" alt="" /></a> <em>Flash movie</em> </li>
-      <li class="cat-video"> <a href="#" rel="prettyPhoto[videos]"> <span></span> <img src="img/dummies/dummy-gallery-thumb3.jpg" alt="" /></a> <em>Video</em> </li>
-      <li class="cat-images"> <a href="img/dummies/dummy-big-image.jpg" rel="prettyPhoto[images]"> <span></span> <img src="img/dummies/dummy-gallery-thumb.jpg" alt="" /></a> <em>Image</em> </li>
-      <li class="cat-flash"> <a href="#" rel="prettyPhoto[flash]"> <span></span> <img src="img/dummies/dummy-gallery-thumb2.jpg" alt="" /></a> <em>Flash movie</em> </li>
-      <li class="cat-video"> <a href="#" rel="prettyPhoto[videos]"> <span></span> <img src="img/dummies/dummy-gallery-thumb3.jpg" alt="" /></a> <em>Video</em> </li>
-      <li class="cat-images"> <a href="img/dummies/dummy-big-image.jpg" rel="prettyPhoto[images]"> <span></span> <img src="img/dummies/dummy-gallery-thumb.jpg" alt="" /></a> <em>Image</em> </li>
-      <li class="cat-flash"> <a href="#" rel="prettyPhoto[flash]"> <span></span> <img src="img/dummies/dummy-gallery-thumb2.jpg" alt="" /></a> <em>Flash movie</em> </li>
-      <li class="cat-video"> <a href="#" rel="prettyPhoto[videos]"> <span></span> <img src="img/dummies/dummy-gallery-thumb3.jpg" alt="" /></a> <em>Video</em> </li>
-      <li class="cat-images"> <a href="img/dummies/dummy-big-image.jpg" rel="prettyPhoto[images]"> <span></span> <img src="img/dummies/dummy-gallery-thumb.jpg" alt="" /></a> <em>Image</em> </li>
-      <li class="cat-flash"> <a href="#" rel="prettyPhoto[flash]"> <span></span> <img src="img/dummies/dummy-gallery-thumb2.jpg" alt="" /></a> <em>Flash movie</em> </li>
-      <li class="cat-video"> <a href="#" rel="prettyPhoto[videos]"> <span></span> <img src="img/dummies/dummy-gallery-thumb3.jpg" alt="" /></a> <em>Video</em> </li>
-    </ul>
-    <!-- ENDS thumbs -->
-    <!-- pager -->
-    <ul class="pager">
-      <li><a href="#">link</a></li>
-      <li class="active"><a href="#">link</a></li>
-      <li><a href="#">link</a></li>
-      <li><a href="#">link</a></li>
-      <li><a href="#">link</a></li>
-      <li><a href="#">link</a></li>
-    </ul>
-    <!-- ENDS pager -->
-    <!-- more galleries -->
-    <div class="one-col">
-      <div class="col">
-        <h3 class="custom title-1">More Albums</h3>
-        <h5 class="toggle-trigger custom"><a href="#">2009 Albums</a></h5>
-        <div class="toggle-container">
-          <div class="block">
-            <ul class="more-galleries ">
-              <li ><a href="#" class="active">2009 New York Exhibition <span>We went to New York last year.</span></a></li>
-              <li><a href="#">Colorful collection at spain <span>Wow this is great!</span></a></li>
-              <li><a href="#">Never ending gallery <span>Lorem ipsm dolor amet...</span></a></li>
-              <li><a href="#">So much paintings around <span>Check this collection out!</span></a></li>
-              <li><a href="#">Colorful collection at spain <span>Wow this is great!</span></a></li>
-              <li><a href="#">Never ending gallery <span>Lorem ipsm dolor amet...</span></a></li>
-              <li><a href="#">So much paintings around <span>Check this collection out!</span></a></li>
-            </ul>
+
+    <table class="flatTable">
+      <tr class="titleTr">
+        <td class="titleTd">TABLE TITLE</td>
+        <td colspan="4"></td>
+        <td class="plusTd button"></td>
+      </tr>
+      <tr class="headingTr">
+        <td>REFERENCE</td>
+        <td>DATE ISSUED</td>
+        <td>COMPANY</td>
+        <td>AMOUNT</td>
+        <td>STATUS</td>
+        <td></td>
+      </tr>
+
+      <tr>
+        <td>#2331212</td>
+        <td>Feb 21,2013</td>
+        <td>White Out</td>
+        <td>$2,000</td>
+        <td>Paid</td>
+        <td class="controlTd">
+          <div class="settingsIcons">
+            <span class="settingsIcon"><img src="https://i.imgur.com/nnzONel.png" alt="X" /></span>
+            <span class="settingsIcon"><img src="https://i.imgur.com/UAdSFIg.png" alt="placeholder icon" /></span>
+            <div class="settingsIcon"><img src="https://i.imgur.com/UAdSFIg.png" alt="placeholder icon" /></div>
           </div>
-        </div>
-        <h5 class="toggle-trigger custom"><a href="#">2008 Albums</a></h5>
-        <div class="toggle-container">
-          <div class="block">
-            <ul class="more-galleries ">
-              <li ><a href="#">2009 New York Exhibition <span>We went to New York last year.</span></a></li>
-              <li><a href="#">Colorful collection at spain <span>Wow this is great!</span></a></li>
-              <li><a href="#">Never ending gallery <span>Lorem ipsm dolor amet...</span></a></li>
-              <li><a href="#">So much paintings around <span>Check this collection out!</span></a></li>
-              <li><a href="#">Colorful collection at spain <span>Wow this is great!</span></a></li>
-              <li><a href="#">Never ending gallery <span>Lorem ipsm dolor amet...</span></a></li>
-              <li><a href="#">So much paintings around <span>Check this collection out!</span></a></li>
-            </ul>
+        </td>
+      </tr>
+
+      <tr>
+        <td>#2331212</td>
+        <td>Feb 21,2013</td>
+        <td>White Out</td>
+        <td>$2,000</td>
+        <td>Paid</td>
+        <td class="controlTd">
+          <div class="settingsIcons">
+            <span class="settingsIcon"><img src="https://i.imgur.com/nnzONel.png" alt="X" /></span>
+            <span class="settingsIcon"><img src="https://i.imgur.com/UAdSFIg.png" alt="placeholder icon" /></span>
+            <div class="settingsIcon"><img src="https://i.imgur.com/UAdSFIg.png" alt="placeholder icon" /></div>
           </div>
-        </div>
-      </div>
+        </td>
+      </tr>
+
+      <tr>
+        <td>#2331212</td>
+        <td>Feb 21,2013</td>
+        <td>White Out</td>
+        <td>$2,000</td>
+        <td>Paid</td>
+        <td class="controlTd">
+          <div class="settingsIcons">
+            <span class="settingsIcon"><img src="https://i.imgur.com/nnzONel.png" alt="X" /></span>
+            <span class="settingsIcon"><img src="https://i.imgur.com/UAdSFIg.png" alt="placeholder icon" /></span>
+            <div class="settingsIcon"><img src="https://i.imgur.com/UAdSFIg.png" alt="placeholder icon" /></div>
+          </div>
+        </td>
+      </tr>
+
+    </table>
+
+    <div id="sForm" class="sForm sFormPadding">
+      <span class="button close"><img src="https://i.imgur.com/nnzONel.png" alt="X"  class="" /></span>
+      <h2 class="title">Add a New Record</h2>
     </div>
-    <!-- ENDS more galleries -->
+
   </div>
   <!-- ENDS MAIN -->
 </div>
@@ -152,15 +163,7 @@ $(document).ready(function () {
 <!-- FOOTER -->
 <div id="footer">
   <div id="footer-wrapper">
-    <ul id="follow">
-      <li>
-        <p>Follow us: </p>
-      </li>
-      <li><a href="#"><img src="img/twitter.png" alt="" /></a></li>
-      <li><a href="#"><img src="img/facebook.png" alt="" /></a></li>
-      <li><a href="#"><img src="img/linkedln.png" alt="" /></a></li>
-      <li><a href="#"><img src="img/rss.png" alt="" /></a></li>
-    </ul>
+
     <div class="footer-cols">
       <div>
         <ul>
