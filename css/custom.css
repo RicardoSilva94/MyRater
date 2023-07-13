@@ -1,0 +1,141 @@
+
+.books {
+	width: 960px;
+	border-collapse: collapse;
+	overflow: hidden;
+	box-shadow: 0 0 20px rgba(0,0,0,0.1);
+}
+
+.books th{
+	padding: 15px;
+	background-color: rgba(255,255,255,0.2);
+	color: #665d4e;
+	text-align: left;
+}
+
+.books td {
+	padding: 15px;
+	background-color: rgba(255,255,255,0.2);
+	color: #665d4e;
+}
+
+.button {
+  border: none;
+  color: none;
+  padding: 10px 16px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 14px;
+  margin: 4px 2px;
+  transition-duration: 0.4s;
+  cursor: pointer;
+}
+
+.button1 {
+  background-color: #665d4e;
+  color: white;
+
+}
+
+.button1:hover {
+  background-color: #4CAF50;
+  color: white;
+}
+.center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+
+}
+
+.wrapper {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%) rotateY(180deg);
+	display: flex;
+}
+
+
+.container{
+position: relative;
+display: flex;
+justify-content: center;
+align-items: center;
+flex-direction: column;
+padding: 30px;
+border-radius: 10px;
+box-shadow: -1px -1px 2px rgba(255, 255, 255, 0.25),
+inset 2px 2px 5px rgba(255, 255, 0255, 0.25),
+8 px 30px 30px rgba(0,0,0,4),
+inset -2 px -2px 5px rgba(0,0,0,3);
+}
+.container p
+{
+margin-bottom: 10px;
+
+font-size: 26px;
+line-height: 1.5em;
+color: #665d4e;
+
+}
+.container .skills
+{
+display: flex;
+align-items: center;
+margin: 0px 0;
+width: 100%;
+}
+
+.container .skills h3
+{
+width: 40%;
+text-align: left;
+padding-right: 20px ;
+color: #665d4e;
+font-size: 15px;
+font-weight: 400;
+letter-spacing: 2px;
+}
+.container .skills .rating
+{
+position: relative;
+display: flex;
+flex-direction: row-reverse;
+margin: 2px 0;
+width: 60%;
+}
+.container .skills .rating input
+{
+position: relative;
+width: 23px;
+height:30px;
+margin: 0 0px;
+display: flex;
+align-items: center;
+cursor: pointer;
+-webkit-appearance: none;
+appearance: none;
+
+}
+
+.container .skills .rating input::before
+{
+content: '\f005';
+position: absolute;
+font-family: fontAwesome;
+font-size: 24px;
+position: absolute;
+left: 4px;
+color: #030b0f;
+transition: 0.5s;
+}
+
+.container .skills .rating input:hover ~ input::before,
+.container .skills .rating input:hover::before,
+.container .skills .rating input:checked ~ input::before,
+.container .skills .rating input:checked::before
+{
+color: #f5c518;
+}

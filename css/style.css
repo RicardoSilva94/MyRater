@@ -48,6 +48,10 @@ body {
 	font-size:  100%;
 }
 
+* {
+	margin: 0;
+	padding: 0;
+}
 
 div#wrapper{
 	position: relative;
@@ -1433,51 +1437,24 @@ div#footer div.footer-bottom p.legal{
 	text-align: center;
 }
 
-table {
+.books {
 	width: 960px;
 	border-collapse: collapse;
 	overflow: hidden;
 	box-shadow: 0 0 20px rgba(0,0,0,0.1);
 }
 
-th,
-td {
+.books th{
 	padding: 15px;
 	background-color: rgba(255,255,255,0.2);
 	color: #665d4e;
-}
-
-th {
 	text-align: left;
 }
 
-thead {
-	th {
-		background-color: #55608f;
-	}
-}
-
-tbody {
-	tr {
-		&:hover {
-			background-color: rgba(255,255,255,0.3);
-		}
-	}
-	td {
-		position: relative;
-		&:hover {
-			&:before {
-				content: "";
-				position: absolute;
-				left: 0;
-				right: 0;
-				top: -9999px;
-				bottom: -9999px;
-				background-color: rgba(255,255,255,0.2);
-				z-index: -1;
-			}
-		}
-	}
+.books td {
+	padding: 15px;
+	background-color: rgba(255,255,255,0.2);
+	color: #665d4e;
 }
 
 .button {
@@ -1509,13 +1486,7 @@ tbody {
   margin-right: auto;
 
 }
-* {
-	margin: 0;
-	padding: 0;
-}
-body {
-	background: beige;
-}
+
 .wrapper {
 	position: absolute;
 	top: 50%;
