@@ -1,16 +1,17 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
 
 .flatTable{
   width:100%;
-  min-width:500px;
+
   border-collapse:collapse;
   font-weight:bold;
-  color:#6b6b6b;
+  color:#556B2F;
   font-family:Lato;
 }
 
 .flatTable tr{
     height:50px;
-    background:#d4d1d5;
+    background:#FFFAF0;
     border-bottom:rgba(0,0,0,.05) 1px solid;
 }
 
@@ -18,13 +19,17 @@
     box-sizing:border-box;
     padding-left:30px;
     vertical-align: middle;
+
+
 }
 
 .flatTable .titleTr{
   height:70px;
   color:#f6f3f7;
-  background:#418a95;
+  background:#808000;
   border:0px solid;
+width: 100%;
+  text-align: center;
 }
 
 .flatTable .plusTd{
@@ -34,14 +39,13 @@
 .flatTable .controlTd{
   position:relative;
   width:80px;
-  background:url(https://i.imgur.com/9Q5f6cv.png) center center no-repeat;
   cursor:pointer;
 }
 
 .flatTable .headingTr{
     height:30px;
-    background:#63acb7;
-    color:#f6f3f7;
+    background:#d9d9b2;
+    color:#665d4e;
     font-size:10pt;
     border:0px solid;
 }
@@ -128,4 +132,17 @@ tr:nth-child(3){
 
 .openIcon{
    width:80px;
+}
+
+.barra {
+  margin-bottom: 20px;
+  background-color: #665d4e;
+  font-size: 26px;
+  height: 2px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color:  #665d4e;
+font-family: 'Open Sans', sans-serif;
+  font-weight: bold;
 }

@@ -35,13 +35,13 @@
 <div id="wrapper">
   <!-- navigation -->
   <ul id="nav" class="sf-menu">
-    <li class="custom"><a href="blog.html">WISHLIST</a></li>
-    <li class="custom"><a href="gallery.html">LISTAS</a></li>
+    <li class="custom"><a href="blog.html">READLIST</a></li>
+    <li class="custom"><a href="gallery.html">LISTA</a></li>
     <li class="custom"><a href="about.html">LIVROS</a></li>
-    <li class="custom"><a href="contact.html">UTILIZADOR</a>
+    <li class="custom"><a >UTILIZADOR</a>
       <ul>
         <li><a href="#">LOGIN</a></li>
-        <li><a href="#">REGISTAR</a></li>
+        <li class="custom"><a href="contact.html">REGISTAR</a>
 
       </ul>
     </li>
@@ -51,61 +51,56 @@
   <!-- ENDS navigation -->
   <!-- HEADER -->
   <div id="header"> <a href="index.html"><img src="img/logo.png" alt="" id="logo" /></a> <img src="img/nav-arrow.png" alt="" id="arrow" class="arrow-contact" />
-    <form action="#" method="post" id="search">
-      <p>
-        <input type="text" onfocus="defaultInput(this)" onblur="clearInput(this)" name="keyword" id="keyword" value="Search..." />
-      </p>
-      <p>
-        <input type="submit" id="go" value="" />
-      </p>
-      <div class="clear"></div>
-    </form>
+
   </div>
   <!-- ENDS HEADER -->
   <!-- MAIN -->
   <div id="main">
-    <p class="section-title"><span class="title custom">Contact Us</span><span class="desc">Send us a message.</span></p>
+    <p class="section-title"><span class="title custom">CRIAR CONTA</span><span class="desc">Faz já o teu registo!</span></p>
     <!-- left-content -->
     <div class="contact-left">
-      <h5 class="custom">Use the form below to send us your comments</h5>
+      <h5 class="custom">Preenche os campos abaixo!</h5>
       <!-- form -->
       <form id="formMail" action="#" method="post">
         <fieldset>
           <p>
-            <label>NAME:</label>
+            <label>NOME:</label>
             <input name="name"  id="name" type="text" />
           </p>
           <p>
-            <label>EMAIL:</label>
-            <input name="email"  id="email" type="text" />
+            <label>USERNAME:</label>
+            <input name="username"  id="username" type="text" />
           </p>
           <p>
-            <label>WEB:</label>
-            <input name="web"  id="web" type="text" />
+            <label>PASSWORD</label>
+            <input name="password"  id="password" type="text" />
           </p>
           <p>
-            <label>COMMENTS:</label>
-            <textarea  name="comments"  id="comments" rows="5" cols="20"></textarea>
+            <label>DATA DE NASCIMENTO</label>
+            <input name="data_nascimento"  id="data_nascimento" type="text" />
+
           </p>
           <p>
+            <label>LOCALIDADE</label>
+            <input name="localidade"  id="localidade" type="text" />
+
             <input type="button" value="" name="send" id="send" />
           </p>
         </fieldset>
-        <p id="error">Error Message</p>
       </form>
-      <p id="success">Thanks for your comments.</p>
+
       <!-- ENDS form -->
     </div>
     <!-- ENDS left-content -->
     <!-- right-content -->
-    <div class="contact-right">
-      <h4 class="custom">Location map</h4>
-      <div class="taped-image"><span></span><em></em><img src="img/map.png" alt="" /></div>
-      <p>Phone: (555) 1144.1234<br/>
-        Email: <a href="#">contact@watercolor-inc.com</a><br/>
-        2514 Street nevermind, City, ST 1454</p>
+
+      <div>
+
     </div>
     <!-- ENDS right-content -->
+    <img src="img/conta.png" alt="livros e pc" style="position: relative;
+    top: -50px;">
+
   </div>
   <!-- ENDS MAIN -->
 </div>
@@ -113,15 +108,7 @@
 <!-- FOOTER -->
 <div id="footer">
   <div id="footer-wrapper">
-    <ul id="follow">
-      <li>
-        <p>Follow us: </p>
-      </li>
-      <li><a href="#"><img src="img/twitter.png" alt="" /></a></li>
-      <li><a href="#"><img src="img/facebook.png" alt="" /></a></li>
-      <li><a href="#"><img src="img/linkedln.png" alt="" /></a></li>
-      <li><a href="#"><img src="img/rss.png" alt="" /></a></li>
-    </ul>
+
     <div class="footer-cols">
       <div>
         <ul>

@@ -1162,7 +1162,8 @@ form#comment-form input#send{
 	height: 36px;
 	background: url(../img/submit-button.png) no-repeat transparent;
 	border: none;
-	margin-top: 14px;
+	float: right;
+	margin-top: 114px;
 }
 
 

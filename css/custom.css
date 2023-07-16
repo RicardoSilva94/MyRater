@@ -139,3 +139,10 @@ transition: 0.5s;
 {
 color: #f5c518;
 }
+
+.form-image-container {
+  overflow: hidden;
+}
+
+
+

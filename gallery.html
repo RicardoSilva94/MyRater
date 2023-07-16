@@ -50,13 +50,13 @@ $(document).ready(function () {
 <div id="wrapper">
   <!-- navigation -->
   <ul id="nav" class="sf-menu">
-    <li class="custom"><a href="blog.html">WISHLIST</a></li>
-    <li class="custom"><a href="gallery.html">LISTAS</a></li>
+    <li class="custom"><a href="blog.html">READLIST</a></li>
+    <li class="custom"><a href="gallery.html">LISTA</a></li>
     <li class="custom"><a href="about.html">LIVROS</a></li>
-    <li class="custom"><a href="contact.html">UTILIZADOR</a>
+    <li class="custom"><a >UTILIZADOR</a>
       <ul>
         <li><a href="#">LOGIN</a></li>
-        <li><a href="#">REGISTAR</a></li>
+        <li class="custom"><a href="contact.html">REGISTAR</a>
 
       </ul>
     </li>
@@ -66,20 +66,12 @@ $(document).ready(function () {
   <!-- ENDS navigation -->
   <!-- HEADER -->
   <div id="header"> <a href="index.html"><img src="img/logo.png" alt="" id="logo" /></a> <img src="img/nav-arrow.png" alt="" id="arrow" class="arrow-gallery" />
-    <form action="#" method="post" id="search">
-      <p>
-        <input type="text" onfocus="defaultInput(this)" onblur="clearInput(this)" name="keyword" id="keyword" value="Search..." />
-      </p>
-      <p>
-        <input type="submit" id="go" value="" />
-      </p>
-      <div class="clear"></div>
-    </form>
+
   </div>
   <!-- ENDS HEADER -->
   <!-- MAIN -->
   <div id="main">
-    <p class="section-title"><span class="title custom">Gallery</span><span class="desc">Filterable gallery with multiple options.</span></p>
+    <p class="section-title"><span class="title custom">Minha Lista</span><span class="desc">Consulta a tua lista de livros!</span></p>
     <!-- filter -->
     <ul id="portfolio-filter">
       <li>FILTER: </li>
@@ -89,72 +81,59 @@ $(document).ready(function () {
       <li><a href="#cat-video">VIDEO</a></li>
     </ul>
 
+    <div class="barra">
+
+    </div>
     <table class="flatTable">
-      <tr class="titleTr">
-        <td class="titleTd">TABLE TITLE</td>
-        <td colspan="4"></td>
-        <td class="plusTd button"></td>
-      </tr>
+
       <tr class="headingTr">
-        <td>REFERENCE</td>
-        <td>DATE ISSUED</td>
-        <td>COMPANY</td>
-        <td>AMOUNT</td>
-        <td>STATUS</td>
-        <td></td>
+        <td>TITULO</td>
+        <td>AUTOR</td>
+        <td>CATEGORIA</td>
+        <td>RATING</td>
+        <td>DATA</td>
+        <td>OBS</td>
       </tr>
 
       <tr>
-        <td>#2331212</td>
-        <td>Feb 21,2013</td>
-        <td>White Out</td>
-        <td>$2,000</td>
-        <td>Paid</td>
+        <td>1984</td>
+        <td>George Orwell</td>
+        <td>Ficção</td>
+        <td>7.5</td>
+        <td>13/07/2023</td>
         <td class="controlTd">
-          <div class="settingsIcons">
-            <span class="settingsIcon"><img src="https://i.imgur.com/nnzONel.png" alt="X" /></span>
-            <span class="settingsIcon"><img src="https://i.imgur.com/UAdSFIg.png" alt="placeholder icon" /></span>
-            <div class="settingsIcon"><img src="https://i.imgur.com/UAdSFIg.png" alt="placeholder icon" /></div>
-          </div>
+
+            <img src="img/next-bullet.png" width="17" height="17" alt="ver mais" usemap="#imagemap" >
+
+
         </td>
       </tr>
 
       <tr>
-        <td>#2331212</td>
-        <td>Feb 21,2013</td>
-        <td>White Out</td>
-        <td>$2,000</td>
-        <td>Paid</td>
+        <td>Ensaio sobre a Cegueira</td>
+        <td>José Saramago</td>
+        <td>Romance</td>
+        <td>6.8</td>
+        <td>20/06/2023</td>
         <td class="controlTd">
-          <div class="settingsIcons">
-            <span class="settingsIcon"><img src="https://i.imgur.com/nnzONel.png" alt="X" /></span>
-            <span class="settingsIcon"><img src="https://i.imgur.com/UAdSFIg.png" alt="placeholder icon" /></span>
-            <div class="settingsIcon"><img src="https://i.imgur.com/UAdSFIg.png" alt="placeholder icon" /></div>
-          </div>
+          <img src="img/next-bullet.png" width="17" height="17" alt="ver mais" usemap="#imagemap" >
         </td>
       </tr>
 
       <tr>
-        <td>#2331212</td>
-        <td>Feb 21,2013</td>
-        <td>White Out</td>
-        <td>$2,000</td>
-        <td>Paid</td>
+        <td>O Silmarillion</td>
+        <td>J.R.R. Tolkien</td>
+        <td>Fantasia</td>
+        <td>8.5</td>
+        <td>13/01/2023</td>
         <td class="controlTd">
-          <div class="settingsIcons">
-            <span class="settingsIcon"><img src="https://i.imgur.com/nnzONel.png" alt="X" /></span>
-            <span class="settingsIcon"><img src="https://i.imgur.com/UAdSFIg.png" alt="placeholder icon" /></span>
-            <div class="settingsIcon"><img src="https://i.imgur.com/UAdSFIg.png" alt="placeholder icon" /></div>
-          </div>
+          <img src="img/next-bullet.png" width="17" height="17" alt="ver mais" usemap="#imagemap" >
         </td>
       </tr>
 
     </table>
 
-    <div id="sForm" class="sForm sFormPadding">
-      <span class="button close"><img src="https://i.imgur.com/nnzONel.png" alt="X"  class="" /></span>
-      <h2 class="title">Add a New Record</h2>
-    </div>
+
 
   </div>
   <!-- ENDS MAIN -->
