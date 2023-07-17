@@ -1578,9 +1578,25 @@ color: #f5c518;
 }
 
 
+#loginButton {
+    width: 87px;
+    height: 36px;
+    background: url(../img/submit-button.png) no-repeat transparent;
+    border: none;
+    float: right;
+    margin-right: 35px;
+    cursor: pointer;
+}
 
-
-
+#registerButton {
+    width: 87px;
+    height: 36px;
+    background: url(../img/submit-button.png) no-repeat transparent;
+    border: none;
+    float: right;
+    margin-right: 35px;
+    cursor: pointer;
+}
 
 
 
