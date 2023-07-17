@@ -36,7 +36,6 @@ div#footer div.footer-cols div{
 	width: 238px;
 	margin: 0px 1px;
 	float: left;
-	min-height: 170px;
 	background: url(../img/footer-separator.png) no-repeat top right;
 }
 

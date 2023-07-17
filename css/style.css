@@ -1351,9 +1351,8 @@ div#footer ul#follow li p{
 div#footer div#footer-wrapper{
 	position: relative;
 	width: 960px;
-	min-height: 200px;
+	height: 100px;
 	margin: 0 auto;
-	background: url(../img/bottom-bg.png)  no-repeat bottom center;
 }
 
 
@@ -1385,7 +1384,6 @@ div#footer div.footer-cols div{
 	width: 238px;
 	margin: 0px 1px;
 	float: left;
-	min-height: 170px;
 	background: url(../img/footer-separator.png) no-repeat top right;
 }
 
