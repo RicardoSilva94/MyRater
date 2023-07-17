@@ -54,6 +54,19 @@ $(document).ready(function () {
         }
         return false;
     });
+
+
+    $('.modal-trigger').click(function(e){
+      e.preventDefault();
+      dataModal = $(this).attr("data-modal");
+      console.log("triparias")
+      $("#" + dataModal).css({"display":"block"});
+    });
+
+
+    $(".close-modal, .modal-sandbox").click(function(){
+      $(".modal").css({"display":"none"});
+    });
     //close			
 });
 // search clearance	
