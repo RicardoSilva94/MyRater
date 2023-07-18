@@ -116,10 +116,6 @@
       </tr>
 
 
-
-
-
-
       <tr>
         <td>1984</td>
         <td>George Orwell</td>
@@ -154,6 +150,49 @@
   }
 </script>
       </tr>
+
+
+
+     
+
+
+      <tr>
+        <td><div contenteditable>Clica aqui para adicionares um novo livro...</div></td>
+        <td><div contenteditable>Clica aqui para adicionares o autor...</div></td>
+
+        <td class="edit">
+          <img src="img/edit.png" width="17" height="17" alt="editar" usemap="#imagemap" >
+
+
+          <map name="imagemap">
+            <area shape="rect" coords="0,0,17,17" onclick="editarItem()" onmouseover="changeCursor('pointer')" onmouseout="changeCursor('default')">
+          </map>
+
+          <script>
+  function changeCursor(cursorStyle) {
+    document.body.style.cursor = cursorStyle;
+  }
+</script>
+
+
+
+        </td>
+        <td>
+          <img src="img/bin.png" width="17" height="17" alt="Caixote do lixo" class="center" usemap="#imagemap">
+
+          <map name="imagemap">
+            <area shape="rect" coords="0,0,17,17" onclick="eliminarItem()" onmouseover="changeCursor('pointer')" onmouseout="changeCursor('default')">
+          </map>
+
+          <script>
+  function changeCursor(cursorStyle) {
+    document.body.style.cursor = cursorStyle;
+  }
+</script>
+      </tr>
+
+
+
 
       </tbody>
     </table>
