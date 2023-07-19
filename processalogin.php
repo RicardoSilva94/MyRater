@@ -1,4 +1,4 @@
-
+global$liga; global$liga;
 <?php
 include("liga.php");
 session_start();
