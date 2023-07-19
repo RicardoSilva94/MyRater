@@ -1686,9 +1686,9 @@ color: #f5c518;
 
 
 button {
-  border: 1px solid #333333;
+  border: 1px solid #665d4e;
   outline: none;
-  color: #333333;
+  color: #fff;
 }
 
 
@@ -1696,7 +1696,7 @@ button {
 	position: absolute;
 	top: 15px;
 	right: 20px;
-	color: #fff;
+	color: #665d4e;
 	display: flex;
 	align-items: center;
 }
@@ -1710,9 +1710,10 @@ button {
 #logout-link {
 	color: #fff;
 	text-decoration: none;
-	border: 1px solid #fff;
+	border: 1px solid #665d4e;
 	padding: 4px 8px;
 	border-radius: 4px;
+	background: #665d4e;
 	transition: background-color 0.3s ease;
 }
 
