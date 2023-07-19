@@ -24,7 +24,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         if (!$liga->query($consulta)) {
             $mensagem = "ERRO - Utilizador não inserido.";
         } else {
-            $mensagem = "Utilizador criado com sucesso!";
+            $mensagem = "Utilizador criado com sucesso! Faz Login para começares a usar o MyRater!";
             $liga->close(); /* fechar a ligação */
         }
     }
@@ -62,7 +62,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <script>
     /* Redirecionar para a página index.html após 5 segundos */
     setTimeout(function() {
-        window.location.href = 'index.html';
+        window.location.href = 'index.php';
     }, 5000); // Tempo em milissegundos (5 segundos)
 </script>
 </body>

@@ -35,13 +35,13 @@
 <div id="wrapper">
   <!-- navigation -->
   <ul id="nav" class="sf-menu">
-    <li class="custom"><a href="blog.html">READLIST</a></li>
-    <li class="custom"><a href="gallery.html">LISTA</a></li>
-    <li class="custom"><a href="about.html">LIVROS</a></li>
+    <li class="custom"><a href="blog.php">READLIST</a></li>
+    <li class="custom"><a href="gallery.php">LISTA</a></li>
+    <li class="custom"><a href="about.php">LIVROS</a></li>
     <li class="custom"><a >UTILIZADOR</a>
       <ul>
-        <li class="custom"><a href="login.html">LOGIN</a></li>
-        <li class="custom"><a href="contact.html">REGISTAR</a></li>
+        <li class="custom"><a href="login.php">LOGIN</a></li>
+        <li class="custom"><a href="contact.php">REGISTAR</a></li>
 
       </ul>
     </li>
@@ -50,37 +50,41 @@
   </ul>
   <!-- ENDS navigation -->
   <!-- HEADER -->
-  <div id="header"> <a href="index.html"><img src="img/logo.png" alt="" id="logo" /></a> <img src="img/nav-arrow.png" alt="" id="arrow" class="arrow-contact" />
 
-  </div>
+  <div id="header">
+    <a href="index.php"><img src="img/logo.png" alt="Logo" id="logo" /></a>
+    <?php
+        session_start();
+        if (isset($_SESSION['nome'])) {
+            echo '<div id="user-info">
+    <div id="user-greeting">Bem-vindo, ' . $_SESSION['nome'] . '!</div>
+    <a href="logout.php" id="logout-link">Logout</a>
+  </div>';
+  }
+  ?>
+  <img src="img/nav-arrow.png" alt="" id="arrow" class="arrow-home" />
+</div>
   <!-- ENDS HEADER -->
   <!-- MAIN -->
   <div id="main">
-    <p class="section-title"><span class="title custom">CRIAR CONTA</span><span class="desc">Faz já o teu registo!</span></p>
+    <p class="section-title"><span class="title custom">LOGIN</span><span class="desc">Faz aqui o teu login!</span></p>
     <!-- left-content -->
     <div class="contact-left">
       <h5 class="custom">Preenche os campos abaixo!</h5>
       <!-- form -->
-      <form id="formMail" action="processautilizador.php" method="post">
+      <form id="formMail" action="processalogin.php" method="post">
         <fieldset>
           <p>
-            <label for="name">NOME</label>
-            <input name="name" id="name" type="text" required/>
+            <label>USERNAME</label>
+            <input name="username"  id="username" type="text" required/>
           </p>
           <p>
-            <label for="username">USERNAME</label>
-            <input name="username" id="username" type="text" required/>
+            <label>PASSWORD</label>
+            <input name="password"  id="password" type="password" required />
           </p>
+
           <p>
-            <label for="password">PASSWORD</label>
-            <input name="password" id="password" type="password" required/>
-          </p>
-          <p>
-            <label for="localidade">LOCALIDADE</label>
-            <input name="localidade" id="localidade" type="text" required/>
-          </p>
-          <p>
-            <input id="registerButton" type="submit" value="" name="send" />
+            <input id="loginButton" type="submit" value="" name="send" />
           </p>
         </fieldset>
       </form>
@@ -94,7 +98,7 @@
 
     </div>
     <!-- ENDS right-content -->
-    <img src="img/conta.png" alt="livros e pc" style="position: relative;
+    <img src="img/login.png" alt="livros e pc" style="position: relative;
     top: -50px;">
 
   </div>
@@ -102,31 +106,31 @@
 </div>
 <!-- ENDS WRAPPER -->
 <!-- FOOTER -->
-<div id="footer">
+<<div id="footer">
   <div id="footer-wrapper">
 
     <div class="footer-cols">
       <div>
         <ul>
-          <li><a href="contact.html" class="custom">Registar</a></li>
+          <li><a href="contact.php" class="custom">Registar</a></li>
 
         </ul>
       </div>
       <div>
         <ul>
-          <li><a href="about.html" class="custom">Livros</a></li>
+          <li><a href="about.php" class="custom">Livros</a></li>
 
         </ul>
       </div>
       <div>
         <ul>
-          <li><a href="about.html" class="custom">Lista</a></li>
+          <li><a href="about.php" class="custom">Lista</a></li>
 
         </ul>
       </div>
       <div class="last">
         <ul>
-          <li><a href="blog.html" class="custom">ReadList</a></li>
+          <li><a href="blog.php" class="custom">ReadList</a></li>
 
         </ul>
       </div>

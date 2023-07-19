@@ -50,13 +50,13 @@ $(document).ready(function () {
 <div id="wrapper">
   <!-- navigation -->
   <ul id="nav" class="sf-menu">
-    <li class="custom"><a href="blog.html">READLIST</a></li>
-    <li class="custom"><a href="gallery.html">LISTA</a></li>
-    <li class="custom"><a href="about.html">LIVROS</a></li>
+    <li class="custom"><a href="blog.php">READLIST</a></li>
+    <li class="custom"><a href="gallery.php">LISTA</a></li>
+    <li class="custom"><a href="about.php">LIVROS</a></li>
     <li class="custom"><a >UTILIZADOR</a>
       <ul>
-        <li class="custom"><a href="login.html">LOGIN</a></li>
-        <li class="custom"><a href="contact.html">REGISTAR</a></li>
+        <li class="custom"><a href="login.php">LOGIN</a></li>
+        <li class="custom"><a href="contact.php">REGISTAR</a></li>
 
       </ul>
     </li>
@@ -65,9 +65,19 @@ $(document).ready(function () {
   </ul>
   <!-- ENDS navigation -->
   <!-- HEADER -->
-  <div id="header"> <a href="index.html"><img src="img/logo.png" alt="" id="logo" /></a> <img src="img/nav-arrow.png" alt="" id="arrow" class="arrow-gallery" />
-
-  </div>
+    <div id="header">
+        <a href="index.php"><img src="img/logo.png" alt="Logo" id="logo" /></a>
+        <?php
+        session_start();
+        if (isset($_SESSION['nome'])) {
+            echo '<div id="user-info">
+            <div id="user-greeting">Bem-vindo, ' . $_SESSION['nome'] . '!</div>
+            <a href="logout.php" id="logout-link">Logout</a>
+          </div>';
+        }
+        ?>
+        <img src="img/nav-arrow.png" alt="" id="arrow" class="arrow-home" />
+    </div>
   <!-- ENDS HEADER -->
   <!-- MAIN -->
   <div id="main">
@@ -161,25 +171,25 @@ $(document).ready(function () {
     <div class="footer-cols">
       <div>
         <ul>
-          <li><a href="contact.html" class="custom">Registar</a></li>
+          <li><a href="contact.php" class="custom">Registar</a></li>
 
         </ul>
       </div>
       <div>
         <ul>
-          <li><a href="about.html" class="custom">Livros</a></li>
+          <li><a href="about.php" class="custom">Livros</a></li>
 
         </ul>
       </div>
       <div>
         <ul>
-          <li><a href="about.html" class="custom">Lista</a></li>
+          <li><a href="about.php" class="custom">Lista</a></li>
 
         </ul>
       </div>
       <div class="last">
         <ul>
-          <li><a href="blog.html" class="custom">ReadList</a></li>
+          <li><a href="blog.php" class="custom">ReadList</a></li>
 
         </ul>
       </div>
