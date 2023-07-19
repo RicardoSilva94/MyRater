@@ -61,30 +61,26 @@
     <div class="contact-left">
       <h5 class="custom">Preenche os campos abaixo!</h5>
       <!-- form -->
-      <form id="formMail" action="#" method="post">
+      <form id="formMail" action="processautilizador.php" method="post">
         <fieldset>
           <p>
-            <label>NOME</label>
-            <input name="name"  id="name" type="text" />
+            <label for="name">NOME</label>
+            <input name="name" id="name" type="text" required/>
           </p>
           <p>
-            <label>USERNAME</label>
-            <input name="username"  id="username" type="text" />
+            <label for="username">USERNAME</label>
+            <input name="username" id="username" type="text" required/>
           </p>
           <p>
-            <label>PASSWORD</label>
-            <input name="password"  id="password" type="text" />
+            <label for="password">PASSWORD</label>
+            <input name="password" id="password" type="password" required/>
           </p>
           <p>
-            <label>DATA DE NASCIMENTO</label>
-            <input name="data_nascimento"  id="data_nascimento" type="text" />
-
+            <label for="localidade">LOCALIDADE</label>
+            <input name="localidade" id="localidade" type="text" required/>
           </p>
           <p>
-            <label>LOCALIDADE</label>
-            <input name="localidade"  id="localidade" type="text" />
-
-            <input id="registerButton" type="button" value="" name="send" />
+            <input id="registerButton" type="submit" value="" name="send" />
           </p>
         </fieldset>
       </form>
