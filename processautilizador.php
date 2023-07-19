@@ -48,16 +48,22 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     var dialog = document.getElementById('mensagem-dialog');
     var fecharDialog = document.getElementById('fechar-dialog');
 
-
+    /* Exibir o dialog ao carregar a página, se houver mensagem */
     if ("<?php echo $mensagem; ?>" !== '') {
         dialog.showModal();
     }
 
-
+    /* Fechar o dialog quando o botão "Fechar" for clicado */
     fecharDialog.addEventListener('click', function() {
         dialog.close();
-        window.location.href = 'index.html';
     });
+</script>
+
+<script>
+    /* Redirecionar para a página index.html após 5 segundos */
+    setTimeout(function() {
+        window.location.href = 'index.html';
+    }, 5000); // Tempo em milissegundos (5 segundos)
 </script>
 </body>
 </html>
