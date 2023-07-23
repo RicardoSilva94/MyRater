@@ -50,9 +50,19 @@
   </ul>
   <!-- ENDS navigation -->
   <!-- HEADER -->
-  <div id="header"> <a href="index.php"><img src="img/logo.png" alt="" id="logo" /></a> <img src="img/nav-arrow.png" alt="" id="arrow" class="arrow-contact" />
-
-  </div>
+    <div id="header">
+        <a href="index.php"><img src="img/logo.png" alt="Logo" id="logo" /></a>
+        <?php
+        session_start();
+        if (isset($_SESSION['nome'])) {
+            echo '<div id="user-info">
+            <div id="user-greeting">Bem-vindo, ' . $_SESSION['nome'] . '!</div>
+            <a href="logout.php" id="logout-link">Logout</a>
+          </div>';
+        }
+        ?>
+        <img src="img/nav-arrow.png" alt="" id="arrow" class="arrow-home" />
+    </div>
   <!-- ENDS HEADER -->
   <!-- MAIN -->
   <div id="main">

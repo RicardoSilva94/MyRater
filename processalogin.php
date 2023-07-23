@@ -1,6 +1,6 @@
-global$liga; global$liga;
 <?php
 include("liga.php");
+global $liga;
 session_start();
 /* Verificar se o formulário foi submetido */
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -32,6 +32,7 @@ else{
         // guardamos as suas informações numa sessão
         $row = mysqli_fetch_array($resultado, MYSQLI_ASSOC);
         $_SESSION['nome'] = $row['nome']; // Definir a variável de sessão com o nome do utilizador
+        $_SESSION['id_utilizador'] = $row['id_utilizador'];
 
         header('location:index.php');
         exit();

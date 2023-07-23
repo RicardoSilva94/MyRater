@@ -55,9 +55,19 @@
   </ul>
   <!-- ENDS navigation -->
   <!-- HEADER -->
-  <div id="header"> <a href="index.php"><img src="img/logo.png" alt="" id="logo" /></a>
-
-  </div>
+    <div id="header">
+        <a href="index.php"><img src="img/logo.png" alt="Logo" id="logo" /></a>
+        <?php
+        session_start();
+        if (isset($_SESSION['nome'])) {
+            echo '<div id="user-info">
+            <div id="user-greeting">Bem-vindo, ' . $_SESSION['nome'] . '!</div>
+            <a href="logout.php" id="logout-link">Logout</a>
+          </div>';
+        }
+        ?>
+        <img src="img/nav-arrow.png" alt="" id="arrow" class="arrow-home" />
+    </div>
   <!-- ENDS HEADER -->
   <!-- MAIN -->
   <div id="main">
@@ -66,21 +76,22 @@
       <!-- single -->
       <div class="single">
         <p class="post-title custom">Adiciona o teu livro</p>
+          <p <h6> E avalia-o, selecionando apenas os critérios de avaliação que achares importantes! </h6>
       <br> <br> <br> <br>
         <!-- form -->
-        <form id="comment-form" action="#" method="post">
+        <form id="comment-form" method="post" action="inserelivro.php" >
           <fieldset>
             <p>
               <label>Título:</label>
-              <input name="name"  id="name" type="text" />
+              <input name="titulo"  id="titulo" type="text" required/>
             </p>
             <p>
               <label>Autor:</label>
-              <input name="email"  id="email" type="text" />
+              <input name="autor"  id="autor" type="text" required />
             </p>
             <p>
               <label>Categoria:</label>
-              <input name="web"  id="web" type="text" />
+              <input name="categoria"  id="categoria" type="text" />
             </p>
             <p>
               <label>Comentários:</label>
@@ -88,7 +99,8 @@
             </p>
 
             <p>
-              <input type="button" value="" name="send" id="send" />
+                <input id="livroButton" type="submit" value="" name="send" />
+
             </p>
           </fieldset>
 

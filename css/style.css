@@ -1164,6 +1164,7 @@ form#comment-form input#send{
 	border: none;
 	float: right;
 	margin-top: 114px;
+	cursor: pointer;
 }
 
 
@@ -1456,18 +1457,6 @@ div#footer div.footer-bottom p.legal{
 	color: #665d4e;
 }
 
-.button {
-  border: none;
-  color: none;
-  padding: 10px 16px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 14px;
-  margin: 4px 2px;
-  transition-duration: 0.4s;
-  cursor: pointer;
-}
 
 .button1 {
   background-color: #665d4e;
@@ -1501,12 +1490,8 @@ display: flex;
 justify-content: center;
 align-items: center;
 flex-direction: column;
-padding: 30px;
+padding: 2px;
 border-radius: 10px;
-box-shadow: -1px -1px 2px rgba(255, 255, 255, 0.25),
-inset 2px 2px 5px rgba(255, 255, 0255, 0.25),
-8 px 30px 30px rgba(0,0,0,4),
-inset -2 px -2px 5px rgba(0,0,0,3);
 }
 .container p
 {
@@ -1596,6 +1581,16 @@ color: #f5c518;
     float: right;
     margin-right: 35px;
     cursor: pointer;
+}
+
+#livroButton {
+	width: 87px;
+	height: 36px;
+	background: url(../img/submit-button.png) no-repeat transparent;
+	border: none;
+	float: right;
+	margin-right: -240px;
+	cursor: pointer;
 }
 
 .verMais{
@@ -1690,7 +1685,6 @@ button {
   outline: none;
   color: #fff;
 }
-
 
 #user-info {
 	position: absolute;

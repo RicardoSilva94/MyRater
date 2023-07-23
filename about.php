@@ -1,3 +1,12 @@
+<?php
+//página protegida, verificação de login
+global $liga;
+session_start();
+
+//require 'verificarlogin.php';
+?>
+
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
@@ -58,7 +67,6 @@
   <div id="header">
     <a href="index.php"><img src="img/logo.png" alt="Logo" id="logo" /></a>
     <?php
-        session_start();
         if (isset($_SESSION['nome'])) {
             echo '<div id="user-info">
     <div id="user-greeting">Bem-vindo, ' . $_SESSION['nome'] . '!</div>
@@ -74,33 +82,52 @@
     <p class="section-title"><span class="title custom">Livros</span><span class="desc">Adiciona, edita ou elimina os teus livros!</span></p>
 
 
+      <?php
+      include("liga.php");
 
 
+      /* definir o charset utilizado na ligação */
+      $liga->set_charset("utf8");
 
-    <table class="books">
+      /* texto sql da consulta*/
+      $consulta = 'SELECT * FROM livros WHERE id_utilizador = ' . $_SESSION['id_utilizador'] .' order by id_livro DESC';
+
+
+      /* executar a consulta e testar se ocorreu erro */
+      if (!$resultado = $liga->query($consulta)) {
+          echo ' Falha na consulta: '. $liga->error;
+          $liga->close();  /* fechar a ligação */
+      }
+      else{
+      ?>
+
+
+      <table class="books">
       <thead>
       <form action="single.php">
       <button class="button button1">+ Adicionar </button>
       </form>
       <tr>
-        <th>Titulo</th>
-        <th>Autor</th>
-        <th>Categoria</th>
-        <th></th>
-        <th></th>
+          <th>Titulo</th>
+          <th>Autor</th>
+          <th>Categoria</th>
+          <th></th>
+          <th></th>
       </tr>
       </thead>
-      <tbody>
-      <tr>
-        <td>Ensaio sobre a Cegueira</td>
-        <td>José Saramago</td>
-        <td>Romance</td>
-        <td class="edit">
+        <tbody>
+        <?php
+      while ($row = $resultado->fetch_assoc()){
+          echo '<tr>';
+          echo '<td>'. $row['titulo'] .'</td>';
+          echo '<td>'. $row['autor'] . '</td>';
+          echo '<td>'. $row['categoria'] . '</td>';
+          echo '<td class="edit">
           <img src="img/edit.png" width="17" height="17" alt="editar" usemap="#imagemap" >
 
 
           <map name="imagemap">
-            <area shape="rect" coords="0,0,17,17" onclick="editarItem()" onmouseover="changeCursor('pointer')" onmouseout="changeCursor('default')">
+            <area shape="rect" coords="0,0,17,17" onclick="editarItem()" onmouseover="changeCursor(\'pointer\')" onmouseout="changeCursor(\'default\')">
           </map>
 
           <script>
@@ -111,12 +138,12 @@
 
 
 
-        </td>
-        <td>
+        </td>';
+          echo '<td>
           <img src="img/bin.png" width="17" height="17" alt="Caixote do lixo" class="center" usemap="#imagemap">
 
           <map name="imagemap">
-            <area shape="rect" coords="0,0,17,17" onclick="eliminarItem()" onmouseover="changeCursor('pointer')" onmouseout="changeCursor('default')">
+            <area shape="rect" coords="0,0,17,17" onclick="eliminarItem()" onmouseover="changeCursor(\'pointer\')" onmouseout="changeCursor(\'default\')">
           </map>
 
           <script>
@@ -124,15 +151,15 @@
     document.body.style.cursor = cursorStyle;
   }
 </script>
+        </td>';
+          echo '</tr>';
+          echo '</p>';
+      }
+      }
+      ?>
 
-          </tr>
 
-
-
-
-
-
-      <tr>
+        <tr>
         <td>1984</td>
         <td>George Orwell</td>
         <td>Ficção</td>
