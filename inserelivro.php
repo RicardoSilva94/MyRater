@@ -24,6 +24,14 @@ else{
 }
 /* texto sql da iserir*/
 $consulta = "INSERT INTO livros (titulo, autor, categoria, comentario, id_utilizador) VALUES ('$titulo', '$autor', '$categoria', '$comentario', '$id_utilizador' )";
+
+/* ivo: +1 insert into avaliacoes
+id_utilizadoer é do $_SESSION['id_utilizador']
+id_livro vem de $liga->insert_id
+data procurar como fazer php localtime
+
+*/
+
 /* executar a consulta e testar se ocorreu erro */
 if (!$liga->query($consulta)) {
     echo " Falha ao executar a consulta: \"$consulta\" <br>" . $liga->error;
@@ -34,5 +42,10 @@ else{
     echo " Novo livro inserido com sucesso" ;
 	echo '<br> <a href="about.php">Voltar para inserir livro </a>';
 }
+
+$avaliacao = "INSERT INTO avaliacoes (	id_utilizador	id_livro	data	personagens	enredo	estilo_de_escrita	coerencia	originalidade	desfecho	relevancia	estrutura	detalhe	
+ ) VALUES ('$titulo', '$autor', '$categoria', '$comentario', '$id_utilizador' )";
+
+
 $liga->close();       /* fechar a ligação */
 ?>

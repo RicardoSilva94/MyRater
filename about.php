@@ -1,9 +1,23 @@
 <?php
-//página protegida, verificação de login
-global $liga;
+// página protegida, verificação de login
 session_start();
 
-//require 'verificarlogin.php';
+if (isset($_SESSION['id_utilizador'])) {
+    global $liga;
+    include("liga.php");
+
+    /* definir o charset utilizado na ligação */
+    $liga->set_charset("utf8");
+
+    /* texto sql da consulta */
+    $consulta = 'SELECT * FROM livros WHERE id_utilizador = ' . $_SESSION['id_utilizador'] . ' ORDER BY id_livro DESC';
+
+    /* executar a consulta e testar se ocorreu erro */
+    if (!$resultado = $liga->query($consulta)) {
+        echo 'Falha na consulta: ' . $liga->error;
+        $liga->close();  /* fechar a ligação */
+    }
+}
 ?>
 
 
@@ -83,120 +97,64 @@ session_start();
 
 
       <?php
-      include("liga.php");
-
-
-      /* definir o charset utilizado na ligação */
-      $liga->set_charset("utf8");
-
-      /* texto sql da consulta*/
-      $consulta = 'SELECT * FROM livros WHERE id_utilizador = ' . $_SESSION['id_utilizador'] .' order by id_livro DESC';
-
-
-      /* executar a consulta e testar se ocorreu erro */
-      if (!$resultado = $liga->query($consulta)) {
-          echo ' Falha na consulta: '. $liga->error;
-          $liga->close();  /* fechar a ligação */
-      }
-      else{
-      ?>
-
-
-      <table class="books">
-      <thead>
-      <form action="single.php">
-      <button class="button button1">+ Adicionar </button>
-      </form>
-      <tr>
-          <th>Titulo</th>
-          <th>Autor</th>
-          <th>Categoria</th>
-          <th></th>
-          <th></th>
-      </tr>
-      </thead>
-        <tbody>
-        <?php
-      while ($row = $resultado->fetch_assoc()){
-          echo '<tr>';
-          echo '<td>'. $row['titulo'] .'</td>';
-          echo '<td>'. $row['autor'] . '</td>';
-          echo '<td>'. $row['categoria'] . '</td>';
-          echo '<td class="edit">
-          <img src="img/edit.png" width="17" height="17" alt="editar" usemap="#imagemap" >
-
-
-          <map name="imagemap">
-            <area shape="rect" coords="0,0,17,17" onclick="editarItem()" onmouseover="changeCursor(\'pointer\')" onmouseout="changeCursor(\'default\')">
-          </map>
-
-          <script>
-  function changeCursor(cursorStyle) {
-    document.body.style.cursor = cursorStyle;
-  }
-</script>
-
-
-
-        </td>';
-          echo '<td>
-          <img src="img/bin.png" width="17" height="17" alt="Caixote do lixo" class="center" usemap="#imagemap">
-
-          <map name="imagemap">
-            <area shape="rect" coords="0,0,17,17" onclick="eliminarItem()" onmouseover="changeCursor(\'pointer\')" onmouseout="changeCursor(\'default\')">
-          </map>
-
-          <script>
-  function changeCursor(cursorStyle) {
-    document.body.style.cursor = cursorStyle;
-  }
-</script>
-        </td>';
-          echo '</tr>';
-          echo '</p>';
-      }
+      if (isset($_SESSION['id_utilizador'])) {
+          // Sessão iniciada, exibir o botão "Adicionar"
+          echo '<form action="single.php">';
+          echo '<button class="button button1">+ Adicionar </button>';
+          echo '</form>';
       }
       ?>
 
+      <?php
+      if (isset($_SESSION['id_utilizador'])) {
+          // Sessão iniciada, exibir a tabela de livros
+          if ($resultado->num_rows > 0) {
+              echo '<table class="books">';
+              echo '<thead>';
+              echo '<tr>';
+              echo '<th>Titulo</th>';
+              echo '<th>Autor</th>';
+              echo '<th>Categoria</th>';
+              echo '<th></th>';
+              echo '<th></th>';
+              echo '</tr>';
+              echo '</thead>';
+              echo '<tbody>';
 
-        <tr>
-        <td>1984</td>
-        <td>George Orwell</td>
-        <td>Ficção</td>
-        <td class="edit">
-          <img src="img/edit.png" width="17" height="17" alt="editar" usemap="#imagemap" >
+              while ($row = $resultado->fetch_assoc()) {
+                  echo '<tr>';
+                  echo '<td>' . $row['titulo'] . '</td>';
+                  echo '<td>' . $row['autor'] . '</td>';
+                  echo '<td>' . $row['categoria'] . '</td>';
+                  echo '<td class="edit">';
+                  echo '<img src="img/edit.png" width="17" height="17" alt="editar" usemap="#imagemap" >';
+                  // Resto do código da imagem do botão "Editar"
+                  echo '</td>';
+                  echo '<td>';
+                  echo '<img src="img/bin.png" width="17" height="17" alt="Caixote do lixo" class="center" usemap="#imagemap">';
+                  // Resto do código da imagem do botão "Eliminar"
+                  echo '</td>';
+                  echo '</tr>';
+              }
 
+              echo '</tbody>';
+              echo '</table>';
+          } else {
+              echo '<p>Não há livros para exibir.</p>';
+          }
 
-          <map name="imagemap">
-            <area shape="rect" coords="0,0,17,17" onclick="editarItem()" onmouseover="changeCursor('pointer')" onmouseout="changeCursor('default')">
-          </map>
-
-          <script>
-  function changeCursor(cursorStyle) {
-    document.body.style.cursor = cursorStyle;
-  }
-</script>
-
-
-
-        </td>
-        <td>
-          <img src="img/bin.png" width="17" height="17" alt="Caixote do lixo" class="center" usemap="#imagemap">
-
-          <map name="imagemap">
-            <area shape="rect" coords="0,0,17,17" onclick="eliminarItem()" onmouseover="changeCursor('pointer')" onmouseout="changeCursor('default')">
-          </map>
-
-          <script>
-  function changeCursor(cursorStyle) {
-    document.body.style.cursor = cursorStyle;
-  }
-</script>
-      </tr>
-
-      </tbody>
-    </table>
-
+          // Liberar o resultado da consulta
+          $resultado->free();
+          // Fechar a conexão com o banco de dados
+          $liga->close();
+      } else {
+          // Sessão não iniciada, exibir mensagem ou redirecionar para login
+          echo '<p>Faz login para adicionares livros!</p>';
+          // Ou redirecionar para a página de login
+          // header("Location: login.php");
+          // exit();
+      }
+      ?>
 
 
         </div>

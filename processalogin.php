@@ -8,8 +8,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
  /*   $password = filter_input(INPUT_POST, 'password');*/
 	$username = $_POST['username'];
     $password = sha1($_POST['password']);
-    $nome = $_POST['name'];
-    $localidade = $_POST['localidade'];
+
 
     /* validar os dados recebidos do formulario */
     if (empty($username) || empty($password)){

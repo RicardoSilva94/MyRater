@@ -62,7 +62,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <script>
     /* Redirecionar para a página index.html após 5 segundos */
     setTimeout(function() {
-        window.location.href = 'index.php';
+        window.location.href = 'login.php';
     }, 5000); // Tempo em milissegundos (5 segundos)
 </script>
 </body>
