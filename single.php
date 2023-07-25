@@ -99,7 +99,7 @@
             </p>
 
             <p>
-                <input id="livroButton" type="submit" value="" name="send" />
+                <button id="livroButton" type="submit" onclick="return processarFormulario()" name="send" />
 
             </p>
           </fieldset>
@@ -120,16 +120,16 @@
       <div class="skills">
         <h3 class="name">Personagens</h3>
         <div class="rating">
-          <input type="radio" name="Personagens">
-          <input type="radio" name="Personagens">
-          <input type="radio" name="Personagens">
-          <input type="radio" name="Personagens">
-          <input type="radio" name="Personagens">
-          <input type="radio" name="Personagens">
-          <input type="radio" name="Personagens">
-          <input type="radio" name="Personagens">
-          <input type="radio" name="Personagens">
-          <input type="radio" name="Personagens">
+          <input type="radio" name="personagens">
+          <input type="radio" name="personagens">
+          <input type="radio" name="personagens">
+          <input type="radio" name="personagens">
+          <input type="radio" name="personagens">
+          <input type="radio" name="personagens">
+          <input type="radio" name="personagens">
+          <input type="radio" name="personagens">
+          <input type="radio" name="personagens">
+          <input type="radio" name="personagens">
 
       </div>
       </div>
@@ -137,32 +137,32 @@
       <div class="skills">
         <h3 class="name">Enredo</h3>
         <div class="rating">
-          <input type="radio" name="Enredo">
-          <input type="radio" name="Enredo">
-          <input type="radio" name="Enredo">
-          <input type="radio" name="Enredo">
-          <input type="radio" name="Enredo">
-          <input type="radio" name="Enredo">
-          <input type="radio" name="Enredo">
-          <input type="radio" name="Enredo">
-          <input type="radio" name="Enredo">
-          <input type="radio" name="Enredo">
+          <input type="radio" name="enredo">
+          <input type="radio" name="enredo">
+          <input type="radio" name="enredo">
+          <input type="radio" name="enredo">
+          <input type="radio" name="enredo">
+          <input type="radio" name="enredo">
+          <input type="radio" name="enredo">
+          <input type="radio" name="enredo">
+          <input type="radio" name="enredo">
+          <input type="radio" name="enredo">
         </div>
       </div>
 
       <div class="skills">
         <h3 class="name">Estilo de escrita</h3>
         <div class="rating">
-          <input type="radio" name="Estilo de escrita">
-          <input type="radio" name="Estilo de escrita">
-          <input type="radio" name="Estilo de escrita">
-          <input type="radio" name="Estilo de escrita">
-          <input type="radio" name="Estilo de escrita">
-          <input type="radio" name="Estilo de escrita">
-          <input type="radio" name="Estilo de escrita">
-          <input type="radio" name="Estilo de escrita">
-          <input type="radio" name="Estilo de escrita">
-          <input type="radio" name="Estilo de escrita">
+          <input type="radio" name="estilo_de_escrita">
+          <input type="radio" name="estilo_de_escrita">
+          <input type="radio" name="estilo_de_escrita">
+          <input type="radio" name="estilo_de_escrita">
+          <input type="radio" name="estilo_de_escrita">
+          <input type="radio" name="estilo_de_escrita">
+          <input type="radio" name="estilo_de_escrita">
+          <input type="radio" name="estilo_de_escrita">
+          <input type="radio" name="estilo_de_escrita">
+          <input type="radio" name="estilo_de_escrita">
 
         </div>
       </div>
@@ -170,16 +170,16 @@
       <div class="skills">
         <h3 class="name">Coerência</h3>
         <div class="rating">
-          <input type="radio" name="Coerência">
-          <input type="radio" name="Coerência">
-          <input type="radio" name="Coerência">
-          <input type="radio" name="Coerência">
-          <input type="radio" name="Coerência">
-          <input type="radio" name="Coerência">
-          <input type="radio" name="Coerência">
-          <input type="radio" name="Coerência">
-          <input type="radio" name="Coerência">
-          <input type="radio" name="Coerência">
+          <input type="radio" name="coerencia">
+          <input type="radio" name="coerencia">
+          <input type="radio" name="coerencia">
+          <input type="radio" name="coerencia">
+          <input type="radio" name="coerencia">
+          <input type="radio" name="coerencia">
+          <input type="radio" name="coerencia">
+          <input type="radio" name="coerencia">
+          <input type="radio" name="coerencia">
+          <input type="radio" name="coerencia">
         </div>
       </div>
 
@@ -202,64 +202,64 @@
       <div class="skills">
         <h3 class="name">Desfecho</h3>
         <div class="rating">
-          <input type="radio" name=Desfecho>
-          <input type="radio" name=Desfecho>
-          <input type="radio" name=Desfecho>
-          <input type="radio" name=Desfecho>
-          <input type="radio" name=Desfecho>
-          <input type="radio" name=Desfecho>
-          <input type="radio" name=Desfecho>
-          <input type="radio" name=Desfecho>
-          <input type="radio" name=Desfecho>
-          <input type="radio" name=Desfecho>
+          <input type="radio" name=desfecho>
+          <input type="radio" name=desfecho>
+          <input type="radio" name=desfecho>
+          <input type="radio" name=desfecho>
+          <input type="radio" name=desfecho>
+          <input type="radio" name=desfecho>
+          <input type="radio" name=desfecho>
+          <input type="radio" name=desfecho>
+          <input type="radio" name=desfecho>
+          <input type="radio" name=desfecho>
         </div>
       </div>
 
       <div class="skills">
         <h3 class="name">Relevância</h3>
         <div class="rating">
-          <input type="radio" name="Relevancia">
-          <input type="radio" name="Relevancia">
-          <input type="radio" name="Relevancia">
-          <input type="radio" name="Relevancia">
-          <input type="radio" name="Relevancia">
-          <input type="radio" name="Relevancia">
-          <input type="radio" name="Relevancia">
-          <input type="radio" name="Relevancia">
-          <input type="radio" name="Relevancia">
-          <input type="radio" name="Relevancia">
+          <input type="radio" name="relevancia">
+          <input type="radio" name="relevancia">
+          <input type="radio" name="relevancia">
+          <input type="radio" name="relevancia">
+          <input type="radio" name="relevancia">
+          <input type="radio" name="relevancia">
+          <input type="radio" name="relevancia">
+          <input type="radio" name="relevancia">
+          <input type="radio" name="relevancia">
+          <input type="radio" name="relevancia">
         </div>
       </div>
 
       <div class="skills">
         <h3 class="name">Estrutura</h3>
         <div class="rating">
-          <input type="radio" name="Estrutura">
-          <input type="radio" name="Estrutura">
-          <input type="radio" name="Estrutura">
-          <input type="radio" name="Estrutura">
-          <input type="radio" name="Estrutura">
-          <input type="radio" name="Estrutura">
-          <input type="radio" name="Estrutura">
-          <input type="radio" name="Estrutura">
-          <input type="radio" name="Estrutura">
-          <input type="radio" name="Estrutura">
+          <input type="radio" name="estrutura">
+          <input type="radio" name="estrutura">
+          <input type="radio" name="estrutura">
+          <input type="radio" name="estrutura">
+          <input type="radio" name="estrutura">
+          <input type="radio" name="estrutura">
+          <input type="radio" name="estrutura">
+          <input type="radio" name="estrutura">
+          <input type="radio" name="estrutura">
+          <input type="radio" name="estrutura">
         </div>
       </div>
 
       <div class="skills">
         <h3 class="name">Detalhe</h3>
         <div class="rating">
-          <input type="radio" name="Detalhe">
-          <input type="radio" name="Detalhe">
-          <input type="radio" name="Detalhe">
-          <input type="radio" name="Detalhe">
-          <input type="radio" name="Detalhe">
-          <input type="radio" name="Detalhe">
-          <input type="radio" name="Detalhe">
-          <input type="radio" name="Detalhe">
-          <input type="radio" name="Detalhe">
-          <input type="radio" name="Detalhe">
+          <input type="radio" name="detalhe">
+          <input type="radio" name="detalhe">
+          <input type="radio" name="detalhe">
+          <input type="radio" name="detalhe">
+          <input type="radio" name="detalhe">
+          <input type="radio" name="detalhe">
+          <input type="radio" name="detalhe">
+          <input type="radio" name="detalhe">
+          <input type="radio" name="detalhe">
+          <input type="radio" name="detalhe">
         </div>
       </div>
 

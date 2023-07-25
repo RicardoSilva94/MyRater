@@ -67,7 +67,7 @@ $(document).ready(function () {
     $(".close-modal, .modal-sandbox").click(function(){
       $(".modal").css({"display":"none"});
     });
-    //close			
+    //close
 });
 // search clearance	
 function defaultInput(target) {
@@ -80,4 +80,61 @@ function clearInput(target) {
     if ((target).value == '') {
         (target).value = 'Search...'
     }
+}
+
+function obterCriterioPara(nome_criterio) {
+    var ratings = document.getElementsByName(nome_criterio);
+    ratings = [...ratings];
+    ratings.reverse();
+    var length = ratings.length;
+    for (var i=0; i<length; i++) {
+        if(ratings[i].checked){
+            return i+1;
+        }
+    }
+    return 0;
+}
+
+function adicionarInputEscondido(nome_campo, valor_campo){
+    $('<input>').attr({
+        type: 'hidden',
+        id: nome_campo,
+        name: nome_campo,
+        value: valor_campo
+    }).appendTo('#comment-form')
+}
+
+function processarFormulario() {
+    var rating_personagens = obterCriterioPara('personagens')
+    adicionarInputEscondido('personagens', rating_personagens)
+
+    var rating_enredo = obterCriterioPara('enredo')
+    adicionarInputEscondido('enredo', rating_enredo)
+
+    var rating_estilo_de_escrita = obterCriterioPara('estilo_de_escrita')
+    adicionarInputEscondido('estilo_de_escrita', rating_estilo_de_escrita)
+
+    var rating_coerencia = obterCriterioPara('coerencia')
+    adicionarInputEscondido('coerencia', rating_coerencia)
+
+    var rating_originalidade = obterCriterioPara('originalidade')
+    adicionarInputEscondido('originalidade', rating_originalidade)
+
+    var rating_desfecho = obterCriterioPara('desfecho')
+    adicionarInputEscondido('desfecho', rating_desfecho)
+
+    var rating_relevancia = obterCriterioPara('relevancia')
+    adicionarInputEscondido('relevancia', rating_relevancia)
+
+    var rating_estrutura = obterCriterioPara('estrutura')
+    adicionarInputEscondido('estrutura', rating_estrutura)
+
+    var rating_detalhe = obterCriterioPara('detalhe')
+    adicionarInputEscondido('detalhe', rating_detalhe)
+
+
+
+
+    // Devolver true faz com que a funcao do php seja tambem executada
+    return true;
 }

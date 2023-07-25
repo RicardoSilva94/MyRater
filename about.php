@@ -10,7 +10,9 @@ if (isset($_SESSION['id_utilizador'])) {
     $liga->set_charset("utf8");
 
     /* texto sql da consulta */
-    $consulta = 'SELECT * FROM livros WHERE id_utilizador = ' . $_SESSION['id_utilizador'] . ' ORDER BY id_livro DESC';
+    $consulta = 'SELECT * FROM livros INNER JOIN avaliacoes ON avaliacoes.id_livro = livros.id_livro WHERE avaliacoes.id_utilizador=' . $_SESSION['id_utilizador'] .' ORDER BY avaliacoes.id_livro DESC';
+
+
 
     /* executar a consulta e testar se ocorreu erro */
     if (!$resultado = $liga->query($consulta)) {
@@ -115,17 +117,63 @@ if (isset($_SESSION['id_utilizador'])) {
               echo '<th>Titulo</th>';
               echo '<th>Autor</th>';
               echo '<th>Categoria</th>';
+              echo '<th>Rating</th>';
               echo '<th></th>';
               echo '<th></th>';
               echo '</tr>';
               echo '</thead>';
               echo '<tbody>';
 
-              while ($row = $resultado->fetch_assoc()) {
+              function ratingAverage($row)
+              {
+                  $average = 0;
+                  $counter = 0;
+                  if ($row['personagens']>0){
+                      $average += $row['personagens'];
+                      $counter++;
+                  }
+                  if ($row['enredo']>0){
+                      $average += $row['enredo'];
+                      $counter++;
+                  }
+                  if ($row['estilo_de_escrita']>0){
+                      $average += $row['estilo_de_escrita'];
+                      $counter++;
+                  }
+                  if ($row['coerencia']>0){
+                      $average += $row['coerencia'];
+                      $counter++;
+                  }
+                  if ($row['originalidade']>0){
+                      $average += $row['originalidade'];
+                      $counter++;
+                  }
+                  if ($row['desfecho']>0){
+                      $average += $row['desfecho'];
+                      $counter++;
+                  }
+                  if ($row['relevancia']>0){
+                      $average += $row['relevancia'];
+                      $counter++;
+                  }
+                  if ($row['estrutura']>0){
+                      $average += $row['estrutura'];
+                      $counter++;
+                  }
+                  if ($row['detalhe']>0){
+                      $average += $row['detalhe'];;
+                      $counter++;
+                }
+                  $average = $average / $counter;
+                  return round ($average, 2) ;
+              }
+
+                  while ($row = $resultado->fetch_assoc()) {
                   echo '<tr>';
                   echo '<td>' . $row['titulo'] . '</td>';
                   echo '<td>' . $row['autor'] . '</td>';
                   echo '<td>' . $row['categoria'] . '</td>';
+                  echo '<td>' . ratingAverage($row). '</td>';
                   echo '<td class="edit">';
                   echo '<img src="img/edit.png" width="17" height="17" alt="editar" usemap="#imagemap" >';
                   // Resto do código da imagem do botão "Editar"

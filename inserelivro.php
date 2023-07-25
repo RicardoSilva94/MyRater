@@ -46,14 +46,13 @@ if (!$liga->query($consulta)) {
 }
 else{
     /* percorrer os registos (linhas) da tabela e mostrar na página */
-    echo " Novo livro inserido com sucesso" ;
+    echo "Novo livro inserido com sucesso\n" ;
 }
 
 $id_livro = $liga->insert_id;
 
 $avaliacao = "INSERT INTO avaliacoes (id_utilizador, id_livro, data, personagens, enredo, estilo_de_escrita, coerencia, originalidade, desfecho, relevancia, estrutura, detalhe) 
-VALUES ('$id_utilizador', '$id_livro', '$data', '1', '2', '3', '4', '5', '6', '7', '8', '9')";
-//$avaliacao = "INSERT INTO avaliacoes(id_utilizador, id_livro, data, personagens, enredo, estilo_de_escrita, coerencia, originalidade, desfecho, relevancia, estrutura, detalhe) VALUES ('$id_utilizador', '$id_livro' '$data', '$personagens', '$enredo', '$estilo_de_escrita', '$coerencia', '$originalidade', '$desfecho', '$relevancia', '$estrutura', '$detalhe' )";
+VALUES ('$id_utilizador', '$id_livro', '$data', $personagens, '$enredo', '$estilo_de_escrita', '$coerencia', '$originalidade', '$desfecho', '$relevancia', '$estrutura', '$detalhe')";
 
 
 if (!$liga->query($avaliacao)){
@@ -62,7 +61,7 @@ if (!$liga->query($avaliacao)){
     exit(0);
 }
 else{
-    echo "Novo livro avaliado com sucesso" ;
+    echo "Novo livro avaliado com sucesso\n" ;
 }
 $liga->close();       /* fechar a ligação */
 
