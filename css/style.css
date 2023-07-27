@@ -1716,7 +1716,7 @@ button {
 	color: #000;
 }
 
-* Estilo para a célula de comentários *
+
 .comment-cell {
 	max-width: 300px; /* Ajuste o valor conforme desejado */
 	overflow: hidden;

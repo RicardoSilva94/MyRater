@@ -202,11 +202,8 @@ if (isset($_SESSION['id_utilizador'])) {
     <!-- Modal -->
     <!-- Seção da modal -->
 
-                </table>
+
             </div>
-        </div>
-    </div>
-</div>
 
 <!-- ENDS WRAPPER -->
 <!-- FOOTER -->
