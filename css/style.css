@@ -1472,7 +1472,7 @@ div#footer div.footer-bottom p.legal{
   display: block;
   margin-left: auto;
   margin-right: auto;
-
+  cursor: pointer;
 }
 
 .wrapper {
