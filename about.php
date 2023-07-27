@@ -93,122 +93,74 @@ if (isset($_SESSION['id_utilizador'])) {
   <img src="img/nav-arrow.png" alt="" id="arrow" class="arrow-home" />
 </div>
   <!-- ENDS HEADER -->
-  <!-- MAIN -->
-  <div id="main">
-    <p class="section-title"><span class="title custom">Livros</span><span class="desc">Adiciona, edita ou elimina os teus livros!</span></p>
+    <!-- MAIN -->
+    <div id="main">
+        <p class="section-title"><span class="title custom">Livros</span><span class="desc">Adiciona, edita ou elimina os teus livros!</span></p>
 
+        <?php
+        if (isset($_SESSION['id_utilizador'])) {
+            // Sessão iniciada, exibir o botão "Adicionar"
+            echo '<form action="single.php">';
+            echo '<button class="button button1">+ Adicionar </button>';
+            echo '</form>';
+        }
+        ?>
 
-      <?php
-      if (isset($_SESSION['id_utilizador'])) {
-          // Sessão iniciada, exibir o botão "Adicionar"
-          echo '<form action="single.php">';
-          echo '<button class="button button1">+ Adicionar </button>';
-          echo '</form>';
-      }
-      ?>
+        <?php
+        if (isset($_SESSION['id_utilizador'])) {
+            // Sessão iniciada, exibir a tabela de livros
+            if ($resultado->num_rows > 0) {
+                echo '<table class="books">';
+                echo '<thead>';
+                echo '<tr>';
+                echo '<th>Titulo</th>';
+                echo '<th>Autor</th>';
+                echo '<th>Categoria</th>';
+                echo '<th></th>';
+                echo '<th></th>';
+                echo '</tr>';
+                echo '</thead>';
+                echo '<tbody>';
 
-      <?php
-      if (isset($_SESSION['id_utilizador'])) {
-          // Sessão iniciada, exibir a tabela de livros
-          if ($resultado->num_rows > 0) {
-              echo '<table class="books">';
-              echo '<thead>';
-              echo '<tr>';
-              echo '<th>Titulo</th>';
-              echo '<th>Autor</th>';
-              echo '<th>Categoria</th>';
-              echo '<th>Rating</th>';
-              echo '<th></th>';
-              echo '<th></th>';
-              echo '</tr>';
-              echo '</thead>';
-              echo '<tbody>';
-
-              function ratingAverage($row)
-              {
-                  $average = 0;
-                  $counter = 0;
-                  if ($row['personagens']>0){
-                      $average += $row['personagens'];
-                      $counter++;
-                  }
-                  if ($row['enredo']>0){
-                      $average += $row['enredo'];
-                      $counter++;
-                  }
-                  if ($row['estilo_de_escrita']>0){
-                      $average += $row['estilo_de_escrita'];
-                      $counter++;
-                  }
-                  if ($row['coerencia']>0){
-                      $average += $row['coerencia'];
-                      $counter++;
-                  }
-                  if ($row['originalidade']>0){
-                      $average += $row['originalidade'];
-                      $counter++;
-                  }
-                  if ($row['desfecho']>0){
-                      $average += $row['desfecho'];
-                      $counter++;
-                  }
-                  if ($row['relevancia']>0){
-                      $average += $row['relevancia'];
-                      $counter++;
-                  }
-                  if ($row['estrutura']>0){
-                      $average += $row['estrutura'];
-                      $counter++;
-                  }
-                  if ($row['detalhe']>0){
-                      $average += $row['detalhe'];;
-                      $counter++;
+                while ($row = $resultado->fetch_assoc()) {
+                    echo '<tr>';
+                    echo '<td>' . $row['titulo'] . '</td>';
+                    echo '<td>' . $row['autor'] . '</td>';
+                    echo '<td>' . $row['categoria'] . '</td>';
+                    // Rating column removed
+                    echo '<td class="edit">';
+                    echo '<img src="img/edit.png" width="17" height="17" alt="editar" usemap="#imagemap" >';
+                    // Resto do código da imagem do botão "Editar"
+                    echo '</td>';
+                    echo '<td>';
+                    echo '<img src="img/bin.png" width="17" height="17" alt="Caixote do lixo" class="center" usemap="#imagemap">';
+                    // Resto do código da imagem do botão "Eliminar"
+                    echo '</td>';
+                    echo '</tr>';
                 }
-                  $average = $average / $counter;
-                  return round ($average, 2) ;
-              }
 
-                  while ($row = $resultado->fetch_assoc()) {
-                  echo '<tr>';
-                  echo '<td>' . $row['titulo'] . '</td>';
-                  echo '<td>' . $row['autor'] . '</td>';
-                  echo '<td>' . $row['categoria'] . '</td>';
-                  echo '<td>' . ratingAverage($row). '</td>';
-                  echo '<td class="edit">';
-                  echo '<img src="img/edit.png" width="17" height="17" alt="editar" usemap="#imagemap" >';
-                  // Resto do código da imagem do botão "Editar"
-                  echo '</td>';
-                  echo '<td>';
-                  echo '<img src="img/bin.png" width="17" height="17" alt="Caixote do lixo" class="center" usemap="#imagemap">';
-                  // Resto do código da imagem do botão "Eliminar"
-                  echo '</td>';
-                  echo '</tr>';
-              }
+                echo '</tbody>';
+                echo '</table>';
+            } else {
+                echo '<p>Não há livros para exibir.</p>';
+            }
 
-              echo '</tbody>';
-              echo '</table>';
-          } else {
-              echo '<p>Não há livros para exibir.</p>';
-          }
+            // Liberar o resultado da consulta
+            $resultado->free();
+            // Fechar a conexão com o banco de dados
+            $liga->close();
+        } else {
+            // Sessão não iniciada, exibir mensagem ou redirecionar para login
+            echo '<p>Faz login para adicionares livros!</p>';
+            // Ou redirecionar para a página de login
+            // header("Location: login.php");
+            // exit();
+        }
+        ?>
+    </div>
+</div>
+<!-- ENDS MAIN -->
 
-          // Liberar o resultado da consulta
-          $resultado->free();
-          // Fechar a conexão com o banco de dados
-          $liga->close();
-      } else {
-          // Sessão não iniciada, exibir mensagem ou redirecionar para login
-          echo '<p>Faz login para adicionares livros!</p>';
-          // Ou redirecionar para a página de login
-          // header("Location: login.php");
-          // exit();
-      }
-      ?>
-
-
-        </div>
-      </div>
-
-  <!-- ENDS MAIN -->
 
 <!-- ENDS WRAPPER -->
 <!-- FOOTER -->

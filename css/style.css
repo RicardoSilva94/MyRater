@@ -1716,7 +1716,21 @@ button {
 	color: #000;
 }
 
+* Estilo para a célula de comentários *
+.comment-cell {
+	max-width: 300px; /* Ajuste o valor conforme desejado */
+	overflow: hidden;
+}
 
+/* Estilo para o container dos comentários com barra de rolagem */
+.comment-container {
+	width: 300px;
+	max-height: 45px; /* Altura máxima do container de comentários com barra de rolagem */
+	overflow-y: auto;
+	scrollbar-color: #8B4513 #D2B48C; /* Cor da barra de rolagem e cor do thumb (castanho) */
+}
 
-
-
+/* Estilo para o parágrafo de comentário */
+.comment-paragraph {
+	/* Pode definir estilos adicionais para o parágrafo de comentário aqui */
+}

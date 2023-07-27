@@ -95,7 +95,7 @@
             </p>
             <p>
               <label>Comentários:</label>
-              <textarea  name="comments"  id="comments" rows="5" cols="20"></textarea>
+              <textarea  name="comments"  id="comments" rows="5 cols="20"></textarea>
             </p>
 
             <p>

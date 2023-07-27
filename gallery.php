@@ -21,7 +21,7 @@ if (isset($_SESSION['id_utilizador'])) {
         echo 'Falha na consulta: ' . $liga->error;
         $liga->close();  /* fechar a ligação */
     }
-    
+
 
 }
 ?>
@@ -51,6 +51,7 @@ if (isset($_SESSION['id_utilizador'])) {
     <script type="text/javascript" src="js/prettyPhoto/js/jquery.prettyPhoto.js"></script>
     <script type="text/javascript" src="js/custom.js"></script>
     <!-- ENDS JS -->
+
     <!-- superfish -->
     <link rel="stylesheet" type="text/css" media="screen" href="css/superfish-custom.css" />
     <script type="text/javascript" src="js/superfish-1.4.8/js/hoverIntent.js"></script>
@@ -112,13 +113,13 @@ if (isset($_SESSION['id_utilizador'])) {
 
         <table class="flatTable">
             <tr class="headingTr">
-                <td>ID</td>
+
                 <td>TITULO</td>
                 <td>AUTOR</td>
                 <td>CATEGORIA</td>
                 <td>RATING</td>
                 <td>DATA</td>
-                <td>OBS</td>
+                <td>COMENTÁRIOS</td>
             </tr>
             <?php
             if (isset($_SESSION['id_utilizador']) && $resultado->num_rows > 0) {
@@ -167,62 +168,46 @@ if (isset($_SESSION['id_utilizador'])) {
                 }
 
                 while ($row = $resultado->fetch_assoc()) {
-                    echo '<tr>';
-                    echo '<td>' . $row['id_livro'] . '</td>';
-                    echo '<td>' . $row['titulo'] . '</td>';
-                    echo '<td>' . $row['autor'] . '</td>';
-                    echo '<td>' . $row['categoria'] . '</td>';
-                    echo '<td>' . ratingAverage($row) . '</td>';
-                    echo '<td>' . $row['data'] . '</td>';
-                    echo '<td class="controlTd">';
-                    echo '<a href="#" class="modal-trigger verMais" data-modal="modal-name" var1="'. $row['id_livro'] . '"></a>';
+                echo '<tr>';
+                echo '<td>' . $row['titulo'] . '</td>';
+                echo '<td>' . $row['autor'] . '</td>';
+                echo '<td>' . $row['categoria'] . '</td>';
+                echo '<td>' . ratingAverage($row) . '</td>';
+                echo '<td>' . $row['data'] . '</td>';
+                echo '<td class="comment-cell">';
 
+                // Buscar os comentários do livro no banco de dados e exibi-los
+                $consulta2 = "SELECT comentario FROM livros WHERE id_utilizador = " . $_SESSION['id_utilizador'] . " AND id_livro = " . $row['id_livro'];
 
-                    echo '</td>';
-                    echo '</tr>';
+                if ($resultado2 = $liga->query($consulta2)) {
+                    echo '<div class="comment-container">'; // Adiciona um div para a barra de rolagem
+                    while ($row2 = $resultado2->fetch_assoc()) {
+                        echo '<p class="comment-paragraph">' . $row2['comentario'] . '</p>';
+                    }
+                    echo '</div>';
+                    $resultado2->free(); // Liberar a memória do resultado2 após o uso
+                } else {
+                    echo 'Falha na consulta: ' . $liga->error;
                 }
-            } else {
-                echo '<tr><td colspan="6">Não há livros para exibir.</td></tr>';
+                echo '</td>';
+                echo '</tr>';
+            }
+        } else {
+                echo '<tr><td colspan="6">Não há livros para exibir. Experimenta adicionar livros ou verifica se estás Logado!</td></tr>';
             }
             ?>
         </table>
     </div>
     <!-- ENDS MAIN -->
     <!-- Modal -->
-    <div class="modal" id="modal-name">
-        <div class="modal-sandbox"></div>
-        <div class="modal-box">
-            <div class="modal-header">
-                <div class="close-modal">&#10006;</div>
-                <h1>Comentários</h1>
-            </div>
-            <div class="modal-body">
-               <!-- <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Hic soluta saepe, atque, iure quidem maiores non dolores, fuga eaque voluptatibus corporis accusantium quas. Eligendi velit eum fugiat eius? Distinctio reiciendis sint error, repellat ut soluta doloremque, accusamus vitae placeat?</p>
-                // <p>Laboriosam voluptas, iure rem provident laborum culpa atque fugit inventore sit. Corrupti dolore architecto inventore officia, odit totam voluptatem laboriosam tempore reiciendis, et neque, consequuntur. Non, tenetur? Tempore reprehenderit tenetur nemo asperiores alias commodi assumenda architecto minima numquam repellendus debitis nulla, rerum officia itaque, sunt nihil sequi quod perspiciatis, animi quas voluptates velit aperiam voluptatem.</p>
-           -->
-                <table>
-                    <?php
-                    $consulta2 = "SELECT * FROM livros INNER JOIN avaliacoes ON avaliacoes.id_livro = livros.id_livro WHERE livros.id_livro = '$var1'";
+    <!-- Seção da modal -->
 
-
-                    if (!$resultado2 = $liga->query($consulta2)) {
-                        echo 'Falha na consulta: ' . $liga->error;
-                        $liga->close();  /* fechar a ligação */
-                    }
-                while ($row2 = $resultado2->fetch_assoc()) {
-                echo '<tr>';
-                    echo '<td>' . $row2['comentario'] . '</td>';
-                    echo '</tr>';
-
-                }
-                    echo '</table>';
-                ?>
                 </table>
             </div>
         </div>
     </div>
-
 </div>
+
 <!-- ENDS WRAPPER -->
 <!-- FOOTER -->
 <div id="footer">
