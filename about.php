@@ -133,7 +133,7 @@ if (isset($_SESSION['id_utilizador'])) {
                     // Resto do código da imagem do botão "Editar"
                     echo '</td>';
                     echo '<td>';
-                    echo '<img src="img/bin.png" width="17" height="17" alt="Caixote do lixo" class="delete-button" data-id-livro="' . $row['id_livro'] . '">';
+                    echo '<a href="eliminarlivro.php?id_livro=' . $row['id_livro'] . '"><img src="img/bin.png" width="17" height="17" alt="Caixote do lixo" class="delete-button" /></a>';
 
                                     // Resto do código da imagem do botão "Eliminar"
                     echo '</td>';
