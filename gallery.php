@@ -110,8 +110,14 @@ if (isset($_SESSION['id_utilizador'])) {
         <p class="section-title"><span class="title custom">Minha Lista</span><span class="desc">Consulta a tua lista de livros!</span></p>
 
         <div class="barra"></div>
-
-        <table class="flatTable">
+        <!-- filter -->
+        <ul id="portfolio-filter">
+            <li>FILTER: </li>
+            <li><a href="#all">ALL</a></li>
+            <li><a href="#cat-images">IMAGES</a></li>
+            <li><a href="#cat-flash">FLASH</a></li>
+            <li><a href="#cat-video">VIDEO</a></li>
+        </ul>        <table class="flatTable">
             <tr class="headingTr">
 
                 <td>TITULO</td>

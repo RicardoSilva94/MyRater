@@ -126,7 +126,7 @@
       </div>
       <div>
         <ul>
-          <li><a href="about.php" class="custom">Lista</a></li>
+          <li><a href="gallery.php" class="custom">Lista</a></li>
 
         </ul>
       </div>
