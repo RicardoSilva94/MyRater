@@ -169,8 +169,12 @@ if (isset($_SESSION['id_utilizador'])) {
                         $average += $row['detalhe'];;
                         $counter++;
                     }
-                    $average = $average / $counter;
-                    return round ($average, 2) ;
+                    if ($counter === 0) {
+                        return 'N/A';
+                    } else {
+                        $average = $average / $counter;
+                        return round($average, 1);
+                    }
                 }
 
                 while ($row = $resultado->fetch_assoc()) {
@@ -178,7 +182,8 @@ if (isset($_SESSION['id_utilizador'])) {
                 echo '<td>' . $row['titulo'] . '</td>';
                 echo '<td>' . $row['autor'] . '</td>';
                 echo '<td>' . $row['categoria'] . '</td>';
-                echo '<td>' . ratingAverage($row) . '</td>';
+                    $rating = ratingAverage($row);
+                    echo '<td>' . ($rating === 'N/A' ? $rating : number_format($rating, 1)) . '</td>';
                 echo '<td>' . $row['data'] . '</td>';
                 echo '<td class="comment-cell">';
 
