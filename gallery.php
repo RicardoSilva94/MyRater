@@ -12,9 +12,6 @@ if (isset($_SESSION['id_utilizador'])) {
     /* texto sql da consulta */
     $consulta = 'SELECT * FROM livros INNER JOIN avaliacoes ON avaliacoes.id_livro = livros.id_livro WHERE avaliacoes.id_utilizador=' . $_SESSION['id_utilizador'] .' ORDER BY avaliacoes.id_livro DESC';
 
-    //$consulta2 = 'SELECT * FROM livros INNER JOIN avaliacoes ON avaliacoes.id_livro = livros.id_livro WHERE livros.id_livro = '. $row['id_livro'];
-
-
 
     /* executar a consulta e testar se ocorreu erro */
     if (!$resultado = $liga->query($consulta)) {
@@ -36,6 +33,7 @@ if (isset($_SESSION['id_utilizador'])) {
     <link rel="stylesheet" href="css/gallery.css" type="text/css" media="screen" />
     <link rel="stylesheet" href="css/spring.css" type="text/css" media="screen" />
     <link rel="stylesheet" href="js/prettyPhoto/css/prettyPhoto.css" type="text/css" media="screen" />
+
     <!--[if IE 6]>
     <link rel="stylesheet" type="text/css" media="screen" href="css/ie-hacks.css" />
     <script type="text/javascript" src="js/DD_belatedPNG.js"></script>
@@ -50,6 +48,7 @@ if (isset($_SESSION['id_utilizador'])) {
     <script type="text/javascript" src="js/filterable.pack.js"></script>
     <script type="text/javascript" src="js/prettyPhoto/js/jquery.prettyPhoto.js"></script>
     <script type="text/javascript" src="js/custom.js"></script>
+
     <!-- ENDS JS -->
 
     <!-- superfish -->
@@ -117,7 +116,7 @@ if (isset($_SESSION['id_utilizador'])) {
             <li><a href="#cat-images">IMAGES</a></li>
             <li><a href="#cat-flash">FLASH</a></li>
             <li><a href="#cat-video">VIDEO</a></li>
-        </ul>        <table class="flatTable">
+        </ul>        <table class="flatTable table-sortable">
             <tr class="headingTr">
 
                 <td>TITULO</td>

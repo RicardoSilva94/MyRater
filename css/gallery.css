@@ -124,11 +124,11 @@ width: 100%;
   background:#d4d1d5;
 }
 
-tr:nth-child(3){
+tr:nth-child(3)
    .settingsIcon{
     height:51px;
   }
-}
+
 
 .openIcon{
    width:80px;

@@ -1593,6 +1593,17 @@ color: #f5c518;
 	cursor: pointer;
 }
 
+#readlistButton {
+	width: 87px;
+	height: 36px;
+	background: url(../img/submit-button.png) no-repeat transparent;
+	border: none;
+	float: left;
+	margin-top: 10px;
+	cursor: pointer;
+}
+
+
 .verMais{
     background: url(../img/next-bullet.png) no-repeat transparent;
     width: 17px;
@@ -1733,4 +1744,19 @@ button {
 /* Estilo para o parágrafo de comentário */
 .comment-paragraph {
 	/* Pode definir estilos adicionais para o parágrafo de comentário aqui */
+}
+
+
+#readlist-container {
+	display: flex;
+	justify-content: flex-end;
+	align-items: center;
+	height: 100%;
+}
+
+#readlist-image {
+	max-height: 100%;
+	margin-right: -450px;
+	top: -160px;
+	position: relative;
 }
