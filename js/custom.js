@@ -138,3 +138,4 @@ function processarFormulario() {
     // Devolver true faz com que a funcao do php seja tambem executada
     return true;
 }
+

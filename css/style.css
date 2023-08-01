@@ -1730,12 +1730,13 @@ button {
 
 .comment-cell {
 	max-width: 300px; /* Ajuste o valor conforme desejado */
-	overflow: hidden;
+	overflow-y: auto;
+	word-wrap: break-word;
 }
 
 /* Estilo para o container dos comentários com barra de rolagem */
 .comment-container {
-	width: 300px;
+	width: 100%;
 	max-height: 45px; /* Altura máxima do container de comentários com barra de rolagem */
 	overflow-y: auto;
 	scrollbar-color: #8B4513 #D2B48C; /* Cor da barra de rolagem e cor do thumb (castanho) */
@@ -1759,4 +1760,11 @@ button {
 	margin-right: -450px;
 	top: -160px;
 	position: relative;
+}
+
+td[data-column="data"] {
+	min-width: 22px; /* Defina uma largura mínima para a coluna "data" */
+}
+td[data-column="titulo"] {
+	max-width: 170px; /* Defina uma largura máxima para as colunas "data" e "TITULO" */
 }

@@ -10,7 +10,11 @@ if (isset($_SESSION['id_utilizador'])) {
     $liga->set_charset("utf8");
 
     /* texto sql da consulta */
-    $consulta = 'SELECT * FROM livros INNER JOIN avaliacoes ON avaliacoes.id_livro = livros.id_livro WHERE avaliacoes.id_utilizador=' . $_SESSION['id_utilizador'] .' ORDER BY avaliacoes.id_livro DESC';
+    $consulta = 'SELECT * FROM livros 
+             INNER JOIN avaliacoes ON avaliacoes.id_livro = livros.id_livro 
+             WHERE avaliacoes.id_utilizador=' . $_SESSION['id_utilizador'] .
+        ' ORDER BY livros.autor ASC';
+
 
 
     /* executar a consulta e testar se ocorreu erro */
@@ -114,7 +118,7 @@ if (isset($_SESSION['id_utilizador'])) {
             <li>ORDENA A TABELA: </li>
             <li><a href="melhor_rating.php" >Melhor Rating</a></li>
             <li><a href="pior_rating.php">Pior Rating</a></li>
-            <li><a href="#gallery.php">Mais Recente</a></li>
+            <li><a href="gallery.php">Mais Recente</a></li>
             <li><a href="mais_antigo.php">Mais Antigo</a></li>
             <li><a href="ordem_alf_autor.php">Ordem Alfabetica Autor</a></li>
             <li><a href="ordem_alf_titulo.php">Ordem Alfabetica Titulo</a></li>
@@ -133,32 +137,32 @@ if (isset($_SESSION['id_utilizador'])) {
 
 
                 while ($row = $resultado->fetch_assoc()) {
-                echo '<tr>';
-                echo '<td data-column="titulo">' . $row['titulo'] . '</td>';
-                echo '<td>' . $row['autor'] . '</td>';
-                echo '<td>' . $row['categoria'] . '</td>';
+                    echo '<tr>';
+                    echo '<td data-column="titulo">' . $row['titulo'] . '</td>';
+                    echo '<td>' . $row['autor'] . '</td>';
+                    echo '<td>' . $row['categoria'] . '</td>';
                     $rating = $row['rating'];
                     echo '<td>' . ($rating === 0  ? 'N/A' : number_format($rating, 1)) . '</td>';
                     echo '<td data-column="data">' . $row['data'] . '</td>';
-                echo '<td class="comment-cell">';
+                    echo '<td class="comment-cell">';
 
-                // Buscar os comentários do livro no banco de dados e exibi-los
-                $consulta2 = "SELECT comentario FROM livros WHERE id_utilizador = " . $_SESSION['id_utilizador'] . " AND id_livro = " . $row['id_livro'];
+                    // Buscar os comentários do livro no banco de dados e exibi-los
+                    $consulta2 = "SELECT comentario FROM livros WHERE id_utilizador = " . $_SESSION['id_utilizador'] . " AND id_livro = " . $row['id_livro'];
 
-                if ($resultado2 = $liga->query($consulta2)) {
-                    echo '<div class="comment-container">'; // Adiciona um div para a barra de rolagem
-                    while ($row2 = $resultado2->fetch_assoc()) {
-                        echo '<p class="comment-paragraph">' . $row2['comentario'] . '</p>';
+                    if ($resultado2 = $liga->query($consulta2)) {
+                        echo '<div class="comment-container">'; // Adiciona um div para a barra de rolagem
+                        while ($row2 = $resultado2->fetch_assoc()) {
+                            echo '<p class="comment-paragraph">' . $row2['comentario'] . '</p>';
+                        }
+                        echo '</div>';
+                        $resultado2->free(); // Liberar a memória do resultado2 após o uso
+                    } else {
+                        echo 'Falha na consulta: ' . $liga->error;
                     }
-                    echo '</div>';
-                    $resultado2->free(); // Liberar a memória do resultado2 após o uso
-                } else {
-                    echo 'Falha na consulta: ' . $liga->error;
+                    echo '</td>';
+                    echo '</tr>';
                 }
-                echo '</td>';
-                echo '</tr>';
-            }
-        } else {
+            } else {
                 echo '<tr><td colspan="6">Não há livros para exibir. Experimenta adicionar livros ou verifica se estás Logado!</td></tr>';
             }
             ?>
@@ -169,7 +173,7 @@ if (isset($_SESSION['id_utilizador'])) {
     <!-- Seção da modal -->
 
 
-            </div>
+</div>
 
 <!-- ENDS WRAPPER -->
 <!-- FOOTER -->

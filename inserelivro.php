@@ -325,6 +325,18 @@
 
 
 <?php
+
+/*Funções*/
+
+function ratingAverage($row)
+{
+    $average = 0;
+    $counter = 0;
+
+}
+
+
+
 global $liga;
 include("liga.php");
 session_start();
@@ -349,6 +361,50 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $estrutura = filter_input(INPUT_POST, 'estrutura');
     $detalhe = filter_input(INPUT_POST, 'detalhe');
 
+    $average = 0;
+    $counter = 0;
+    if ($personagens>0){
+        $average += $personagens;
+        $counter++;
+    }
+    if ($enredo>0){
+        $average += $enredo;
+        $counter++;
+    }
+    if ($estilo_de_escrita>0){
+        $average += $estilo_de_escrita;
+        $counter++;
+    }
+    if ($coerencia>0){
+        $average += $coerencia;
+        $counter++;
+    }
+    if ($originalidade>0){
+        $average += $originalidade;
+        $counter++;
+    }
+    if ($desfecho>0){
+        $average += $desfecho;
+        $counter++;
+    }
+    if ($relevancia>0){
+        $average += $relevancia;
+        $counter++;
+    }
+    if ($estrutura>0){
+        $average += $estrutura;
+        $counter++;
+    }
+    if ($detalhe>0){
+        $average += $detalhe;;
+        $counter++;
+    }
+    if ($counter === 0) {
+        $average = 0;
+    } else {
+        $average = $average / $counter;
+        $average = round($average, 1);
+    }
 
 
     /* validar os dados recebidos do formulario */
@@ -377,8 +433,8 @@ else{
 
 $id_livro = $liga->insert_id;
 
-$avaliacao = "INSERT INTO avaliacoes (id_utilizador, id_livro, data, personagens, enredo, estilo_de_escrita, coerencia, originalidade, desfecho, relevancia, estrutura, detalhe) 
-VALUES ('$id_utilizador', '$id_livro', '$data', $personagens, '$enredo', '$estilo_de_escrita', '$coerencia', '$originalidade', '$desfecho', '$relevancia', '$estrutura', '$detalhe')";
+$avaliacao = "INSERT INTO avaliacoes (id_utilizador, id_livro, data, personagens, enredo, estilo_de_escrita, coerencia, originalidade, desfecho, relevancia, estrutura, detalhe, rating) 
+VALUES ('$id_utilizador', '$id_livro', '$data', $personagens, '$enredo', '$estilo_de_escrita', '$coerencia', '$originalidade', '$desfecho', '$relevancia', '$estrutura', '$detalhe', '$average')";
 
 
 if (!$liga->query($avaliacao)){
