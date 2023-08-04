@@ -335,8 +335,6 @@ function ratingAverage($row)
 
 }
 
-
-
 global $liga;
 include("liga.php");
 session_start();

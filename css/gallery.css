@@ -125,9 +125,11 @@ width: 100%;
 }
 
 tr:nth-child(3)
-   .settingsIcon{
-    height:51px;
-  }
+
+.settingsIcon {
+    height: 51px;
+}
+
 
 
 .openIcon{

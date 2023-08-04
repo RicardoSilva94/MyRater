@@ -130,12 +130,12 @@ if (isset($_SESSION['id_utilizador'])) {
                     // Rating column removed
                     echo '<td class="edit">';
                     echo '<a href="editarlivro.php?id_livro=' . $row['id_livro'] . '"><img src="img/edit.png" width="17" height="17" alt="editar" /></a>';
-                    // Resto do código da imagem do botão "Editar"
+
                     echo '</td>';
                     echo '<td>';
                     echo '<a href="eliminarlivro.php?id_livro=' . $row['id_livro'] . '"><img src="img/bin.png" width="17" height="17" alt="Caixote do lixo" class="delete-button" /></a>';
 
-                                    // Resto do código da imagem do botão "Eliminar"
+
                     echo '</td>';
                     echo '</tr>';
                 }
