@@ -22,7 +22,7 @@ else{
     echo " Erro, formulário não submetido ";
     exit();
 }
-/* texto sql da iserir*/
+/* texto sql de inserir*/
 $consulta = "INSERT INTO desejos (titulo, autor, id_utilizador) VALUES ('$titulo', '$autor', '$id_utilizador' )";
 
 /* executar a consulta e testar se ocorreu erro */

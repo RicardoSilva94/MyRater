@@ -142,16 +142,16 @@ if (isset($_SESSION['id_utilizador'])) {
                     echo '<td data-column="data">' . $row['data'] . '</td>';
                 echo '<td class="comment-cell">';
 
-                // Buscar os comentários do livro no banco de dados e exibi-los
+
                 $consulta2 = "SELECT comentario FROM livros WHERE id_utilizador = " . $_SESSION['id_utilizador'] . " AND id_livro = " . $row['id_livro'];
 
                 if ($resultado2 = $liga->query($consulta2)) {
-                    echo '<div class="comment-container">'; // Adiciona um div para a barra de rolagem
+                    echo '<div class="comment-container">';
                     while ($row2 = $resultado2->fetch_assoc()) {
                         echo '<p class="comment-paragraph">' . $row2['comentario'] . '</p>';
                     }
                     echo '</div>';
-                    $resultado2->free(); // Liberar a memória do resultado2 após o uso
+                    $resultado2->free();
                 } else {
                     echo 'Falha na consulta: ' . $liga->error;
                 }
@@ -165,8 +165,6 @@ if (isset($_SESSION['id_utilizador'])) {
         </table>
     </div>
     <!-- ENDS MAIN -->
-    <!-- Modal -->
-    <!-- Seção da modal -->
 
 
             </div>

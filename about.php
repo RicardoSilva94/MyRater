@@ -146,9 +146,9 @@ if (isset($_SESSION['id_utilizador'])) {
                 echo '<p>Não há livros para exibir.</p>';
             }
 
-            // Liberar o resultado da consulta
+            // Libertar o resultado da consulta
             $resultado->free();
-            // Fechar a conexão com o banco de dados
+            // Fechar a conexão com a BD
             $liga->close();
         } else {
             // Sessão não iniciada, exibir mensagem ou redirecionar para login

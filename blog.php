@@ -129,7 +129,7 @@ if (isset($_SESSION['id_utilizador'])) {
                     echo '<td>';
                     echo '<a href="eliminaLivroReadlist.php?id_livro=' . $row['id_livro'] . '"><img src="img/bin.png" width="17" height="17" alt="Caixote do lixo" class="delete-button" /></a>';
 
-                    // Resto do código da imagem do botão "Eliminar"
+
                     echo '</td>';
                     echo '</tr>';
                 }
@@ -140,16 +140,15 @@ if (isset($_SESSION['id_utilizador'])) {
                 echo '<p>Não há livros para exibir.</p>';
             }
 
-            // Liberar o resultado da consulta
+            // Libertar o resultado da consulta
             $resultado->free();
-            // Fechar a conexão com o banco de dados
+            // Fechar a conexão com a bd
             $liga->close();
         } else {
             // Sessão não iniciada, exibir mensagem ou redirecionar para login
             echo '<p>Faz login para adicionares livros!</p>';
-            // Ou redirecionar para a página de login
-            // header("Location: login.php");
-            // exit();
+
+
         }
         ?>
     </div>

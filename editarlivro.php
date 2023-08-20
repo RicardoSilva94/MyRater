@@ -11,7 +11,7 @@ if (isset($_SESSION['id_utilizador'])) {
     if (isset($_GET['id_livro'])) {
         // Obter o ID do livro
         $id_livro = $_GET['id_livro'];
-        // Consultar o banco de dados para obter os dados do livro
+        // Consultar a bd para obter os dados do livro
         $consulta_livro = 'SELECT * FROM livros WHERE id_livro = ' . $id_livro;
 
         /* executar a consulta e testar se ocorreu erro */
@@ -32,7 +32,7 @@ if (isset($_SESSION['id_utilizador'])) {
             exit();
         }
 
-        // Restante código...
+
 
     } else {
         // ID do livro não foi passado pela URL, redirecionar para a página de livros

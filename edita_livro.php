@@ -397,7 +397,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 </head>
 <body>
 <style>
-    /* Estilize o dialog para centralizá-lo */
+    /* Estiliza o dialog para centralizá-lo */
     dialog {
         position: fixed;
         top: 50%;
@@ -409,7 +409,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         z-index: 9999;
     }
 
-    /* Estilize o botão de fechar com a cor vermelha */
+    /* Estiliza o botão de fechar com a cor vermelha */
     #fechar-dialog {
         background-color: red;
         color: white;
